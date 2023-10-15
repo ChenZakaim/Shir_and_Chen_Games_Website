@@ -1,0 +1,67 @@
+//all the form inputs that the function will add according to the selected scenerio:
+const formInputs = {
+    "log in": ["username", "password"],
+    "sign in": ["first name", "last name","Email","username","password"]
+};
+
+/**
+ * a function that reloads the form as log in / sign in
+ */
+function addFormInputs(key) {
+    const formBox = document.getElementById("formBox");
+    const form = document.getElementsByTagName("form")[0];
+    const title = document.getElementById("title");
+
+    title.textContent = key;// changing the form title
+
+    for (let i = 0; i < formInputs[key].length; i++) {
+
+        //creates new label tag
+        let newLabel = document.createElement("label");
+        newLabel.setAttribute("for", formInputs[key][i]);
+        newLabel.textContent = formInputs[key][i];
+        //creates new input tag
+        let newInput = document.createElement("input");
+        newInput.name = formInputs[key][i];
+        newInput.id = formInputs[key][i];
+
+
+        //defines type - password to passwords, others = text.
+        if (formInputs[key][i] === "password"){
+            newInput.type = "password";
+        }
+        else {
+            newInput.type = "text";
+        }
+
+        //attaches new tags to the form
+        newInput.setAttribute('required', '');
+        form.appendChild(newLabel);
+        form.appendChild(newInput);
+        form.appendChild(document.createElement("br"));
+
+    }
+    //adds submit button
+    let submit = document.createElement("input");
+    submit.type = "submit";
+    submit.value = key;
+    form.appendChild(submit);
+    
+
+    let button = document.createElement("button");
+    button.type = "button";
+    button.id = "button";
+
+    if ( key === "log in") {
+        button.textContent = "sing in";
+        form.appendChild(button);
+        button.onclick = () => { form.innerHTML = "";
+            addFormInputs("sign in");};
+    }
+    else {
+        button.textContent = "log in";
+        form.appendChild(button);
+        button.onclick = () => { form.innerHTML = "";
+        addFormInputs("log in");}
+    }
+}
