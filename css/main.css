@@ -1,5 +1,25 @@
+
 #navigation {
-    height: 10vw;
-    width: 100vw;
+    height: 15vh;
+    width:  98vw;
     background-color: #fbb38d;
+}
+body{
+    background-color: #f58b7e;
+}
+#homebutton{
+    margin:2px;
+    padding:10px;
+}
+#logout{
+    float:right;
+    height:10vh;
+    width:20vw;
+    font-size: 30px;
+   font-weight: bold;
+   background-color:#f58b7e;
+   border:1px solid #fbb38d;
+}
+a{
+    margin:5px;
 }
