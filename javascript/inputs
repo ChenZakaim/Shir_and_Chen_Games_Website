@@ -5,14 +5,15 @@ const formInputs = {
 };
 
 /**
- * a function that reloads the form as log in / sign in
+ * a function that reloads the form as "log in" or "sign in"
  */
 function addFormInputs(key) {
-    const formBox = document.getElementById("formBox");
-    const form = document.getElementsByTagName("form")[0];
+    // const formBox = document.getElementById("formBox");
+    
     const title = document.getElementById("title");
-
     title.textContent = key;// changing the form title
+    
+    const form = document.getElementsByTagName("form")[0];
 
     for (let i = 0; i < formInputs[key].length; i++) {
 
