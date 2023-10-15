@@ -29,9 +29,7 @@
 
 .img:hover{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 312px;
-    color: black; */
-    transition: opacity .3s cubic-bezier(0.5, 0, .1, 1); */
-     transition-delay: 0ms;
+    color: black; 
     z-index: -1;
     border-radius: 8px;
     bottom: 0;
