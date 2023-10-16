@@ -1,8 +1,12 @@
 //all the form inputs that the function will add according to the selected scenerio:
 const formInputs = {
     "log in": ["username", "password"],
-    "sign up": ["first name", "last name", "email    ", "username", "password"]
+    "sign up": ["first name", "last name", "email", "username", "password"]
 };
+
+
+
+
 
 /**
  * a function that reloads the form as "log in" or up"
@@ -26,23 +30,29 @@ function addFormInputs(key) {
         newInput.name = formInputs[key][i];
         newInput.id = formInputs[key][i];
 
+        //attaches new tags to the form
+        newInput.setAttribute('required', '');
+        form.appendChild(newLabel);
+        form.appendChild(newInput);
 
-        //defines type - password to passwords, others = text.
+        //defines type - password to passwords, others = text. adds eye to password
         if (formInputs[key][i] === "password") {
             newInput.type = "password";
+            let eye = document.createElement("i");
+            eye.className = "far fa-eye";
+            eye.id = "togglePassword";
+            eye.style.fontSize = "0.73em";
+            form.appendChild(eye);
+            setEyeEvent();
         }
         else {
             newInput.type = "text";
         }
 
-        //attaches new tags to the form
-        newInput.setAttribute('required', '');
-        form.appendChild(newLabel);
-        // form.appendChild(document.createElement("br"));
-        form.appendChild(newInput);
-        // form.appendChild(document.createElement("br"));
 
     }
+
+
     //adds submit button
     let buttonsContainer = document.createElement("div");
     buttonsContainer.id = "buttonsContainer";
@@ -76,4 +86,21 @@ function addFormInputs(key) {
     }
     //add buttons to form
     form.appendChild(buttonsContainer);
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+function setEyeEvent() {
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
 }

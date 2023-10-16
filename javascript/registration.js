@@ -87,27 +87,6 @@ function handleSubmittedFormSignup() {
     let usedKeys = 0;
 
 
-
-    
-    // for (let tag of inputTags) {
-    //     for (let user of users) {
-    //         // for(let key in user) {
-    // for (let tag of inputTags) {
-    //     if((tag.name === "Email")
-    //             if (tag.name ==="username" )tag.value === user["Email"]){
-    //                 usedKeys++;
-    //                 failed = true;
-    //             }
-    //         }
-    //         if (user.key().length === usedKeys){
-    //             alert("user already exist!!")
-    //         }
-
-    //     }
-
-    // }
-
-
     //add new user to local storage
     if (!failed) {
         let newUser = {};
@@ -121,7 +100,7 @@ function handleSubmittedFormSignup() {
         }
         for (let user of users) {
             if (user["username"] === newUser["username"]) {
-                if (user["Email"] === newUser["Email"]) {
+                if (user["email"] === newUser["email"]) {
                     failed = true;
                     alert("user already exists! log in to start playing");
                     return false;
@@ -134,7 +113,8 @@ function handleSubmittedFormSignup() {
                 
             }
             else {
-                if (user["Email"] === newUser["Email"]) {
+                if (user["email"] === newUser["email"]) {
+
                     failed = true;
                     alert("Email is alredy used. try again with a different one or log in with this Email's account username and password.")
                     break;
@@ -150,27 +130,10 @@ function handleSubmittedFormSignup() {
             localStorage.setItem("users", JSON.stringify(users));
             localStorage.setItem("currentUser", JSON.stringify(newUser));
             alert("you signed up successfully! have fun:)");
-            window.location.assign("file:///home/hilma/Desktop/project1/html/homepage.html");
+            window.location.assign("../html/homepage.html");
         }
 
 
     }
 }
-function logIn(password,username){
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    for(let user of users){
-        if (user["userName"]=== username && user["password"]===password){
-            let userim=JSON.parse(localStorage.getItem("currentUser")||{});
-            userim=user;
-            localStorage.setItem("currentUser", JSON.stringify(userim));
-            window.location.href="../html/homepage.html";
-            return true;
-        }
-
-    
-    }
-    alert("Invalid user");
-}
-
-
 

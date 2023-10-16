@@ -1,29 +1,47 @@
-
 #navigation {
     height: 15vh;
-    width:  98vw;
+    width: 98vw;
     background-color: #fbb38d;
 }
-body{
+
+body {
     background-color: #f58b7e;
     font-weight: bold;
     font-family: 'Space Mono', monospace;
 }
-#homebutton{
-    float:left;
-    margin:2px;
-    padding:10px;
+
+#homebutton {
+    float: left;
+    margin: 2px;
+    padding: 10px;
 }
-#logout{
-     float:right;
-    height:10vh;
-    width:20vw;
-   font-size: 30px;
-  margin: 15px ;
-  background-color: #f58b7e;
-  border: 1px solid #fbb38d;
+
+#logout {
+    float: right;
+    height: 10vh;
+    width: 20vw;
+    font-size: 30px;
+    margin: 15px;
+    background-color: #f58b7e;
+    border: 1px solid #fbb38d;
+    cursor: pointer;
+    border-radius: 2em;
+
 }
-#local{
+
+#logout:hover{
+
+    border: 1px solid black;
+}
+
+#local {
     text-decoration: none;
 }
 
+#togglePassword {
+    margin-top: -1.6em;
+    margin-right: 0.5em;
+    opacity: 0.5;
+    align-self: flex-end;
+    cursor: pointer;
+}

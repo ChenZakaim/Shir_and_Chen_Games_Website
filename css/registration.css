@@ -40,8 +40,17 @@ h2 {
     margin: 0;
 }
 
+#button:hover,
+#submit:hover {
+    cursor: pointer;
+    background-color: #f58b7e;
+    border-color: black;
+    color: black;
+}
+
 input {
     margin: 5px 2px;
+    padding: 5px;
     line-height: 1;
     font-size: 1.5rem;
     border-radius: 15px;
