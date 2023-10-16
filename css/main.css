@@ -6,6 +6,8 @@
 }
 body{
     background-color: #f58b7e;
+    font-weight: bold;
+    font-family: 'Space Mono', monospace;
 }
 #homebutton{
     float:left;

@@ -1,6 +1,3 @@
-
-
-
 addFormInputs("log in");
 const formBox = document.getElementById("formBox");
 const form = document.getElementsByTagName("form")[0];
