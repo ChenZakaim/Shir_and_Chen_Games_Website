@@ -8,6 +8,7 @@ const submit = document.getElementById("submit");
 
 
 function handleSubmittedForm(){
+    event.preventDefault();
     const title = document.getElementById("title");
 
 
@@ -152,8 +153,8 @@ function handleSubmittedFormSignup() {
             localStorage.setItem("users", JSON.stringify(users));
             localStorage.setItem("currentUser", JSON.stringify(newUser));
             alert("you signed up successfully! have fun:)");
+            window.location.assign("file:///home/hilma/Desktop/project1/html/homepage.html");
         }
-        window.location.href="../html/homepage.html";
 
 
     }

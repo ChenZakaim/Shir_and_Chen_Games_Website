@@ -1,23 +1,31 @@
 
 let grid= document.getElementById("grid-container").addEventListener("click",go());
-let dotone= document.getElementById("dotone").addEventListener("click",go());
+let fish= document.getElementsById("fish1").addEventListener("click",go());
+
+
+window.onload=function (){
+   alert("hi");
+}
+function start(){
+
 let x=Math.floor(math.random()*19+1);
 let y= Math.floor(math.random()*19+1);
-window.onload=function(x,y){
-    dotone.style.setProperty("grid-column-start", ""+x);
-    dotone.style.setProperty("grid-row-start",""+ y);
+    fish.style.setProperty("top", x+"px");
+    fish.style.setProperty("left",y+"px");
+    console.log(x, y);
+    alert(x, y);
 }
-
+start();
 function go(){
-    let i =document.getElementById("shark");
-    i.style.height+=5px;
-    i.style.width+=5px;
+    let shark =document.getElementById("shark");
+    shark.style.height+=5;
+    shark.style.width+=5;
      x= Math.floor(math.random()*19+1);
      y= Math.floor(math.random()*19+1);
      set(x,y);
 }  
 
 function set (x, y){
-    dotone.style.setProperty("grid-column-start", ""+x);
-    dotone.style.setProperty("grid-row-start",""+ y);
+    fish.style.setProperty("top", x+"px");
+    fish.style.setProperty("left",y +"px");
 }
