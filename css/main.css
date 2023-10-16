@@ -8,18 +8,21 @@ body{
     background-color: #f58b7e;
 }
 #homebutton{
+    float:left;
     margin:2px;
     padding:10px;
 }
 #logout{
-    float:right;
+     float:right;
     height:10vh;
     width:20vw;
    font-size: 30px;
-   font-weight: bold;
-   background-color:#f58b7e;
-   border:1px solid #fbb38d;
-   padding:10px;
+  margin: 15px ;
+  background-color: #f58b7e;
+  border: 1px solid #fbb38d;
+}
+#local{
+    text-decoration: none;
 }
 form {
     width: 70vw;
