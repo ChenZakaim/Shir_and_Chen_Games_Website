@@ -21,3 +21,13 @@ body{
    border:1px solid #fbb38d;
    padding:10px;
 }
+form {
+    width: 70vw;
+    padding: 1em;
+}
+#button {
+    width: rem;
+    height: rem;
+    color: white;
+    background-color: black;
+}

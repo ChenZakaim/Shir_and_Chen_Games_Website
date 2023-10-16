@@ -1,0 +1,24 @@
+const regexEmail = /^\w+@[a-z]+.(com|org|net)$/i;
+const regexUsername = /^\w{2,12}$/;
+const regexName = /^[a-zA-Z]{2,12}$/;
+const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+function checkName(value) {
+    console.log('regexName.test(value): ', regexName.test(value));
+    return regexName.test(value);
+}
+
+function checkUsername(value) {
+    console.log('regexUsername.test(value): ', regexUsername.test(value));
+    return regexUsername.test(value);
+}
+
+function checkPassword(value) {
+    console.log('regexPassword.test(value): ', regexPassword.test(value));
+    return regexPassword.test(value);
+}
+
+function checkEmail(value) {
+    console.log('regexEmail.test(value): ', regexEmail.test(value));
+    return regexEmail.test(value);
+}
