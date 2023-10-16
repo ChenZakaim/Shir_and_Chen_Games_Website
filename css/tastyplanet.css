@@ -1,0 +1,40 @@
+#grid-container{
+    display: grid;
+    height:96vh;
+    width:70vw;
+    margin: 15px auto;
+    display:flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(20, f1);
+    grid-template-rows:  repeat(20, f1);
+   background-image:url("/home/hilma/project1/images/sea.jpg");
+   background-size: cover;
+   z-index:0;
+}
+#dotone{
+    /* height:30px;
+    width:40px; */
+    /* background-image: url("/home/hilma/project1/images/fish.png"); */
+    z-index:2;
+
+}
+#fish{
+    /* height: 5px;
+    width:3px; */
+    position: absolute;
+}
+#shark{
+    height:20px;
+    width:14px;
+    /* background-image: url(/home/hilma/project1/images/shark.png); */
+   
+    z-index:1;
+}
+#sharkimg{[
+    height: 40px;
+    width:30px;
+    /* position: absolute; */
+]}
+#grid-container:click #shark{
+ 
+}
