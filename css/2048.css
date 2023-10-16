@@ -1,12 +1,13 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: #e95853;
 }hr{
     width: 500px;
 }
 #board{
-    width:400px;
-    height:400px;
+    width:480px;
+    height:480px;
     background-color: #fbb38d;
     border: 6px solid #f58b7e;
     margin: 0 auto;
