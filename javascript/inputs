@@ -1,11 +1,11 @@
 //all the form inputs that the function will add according to the selected scenerio:
 const formInputs = {
     "log in": ["username", "password"],
-    "sign in": ["first name", "last name","Email","username","password"]
+    "sign up": ["first name", "last name","Email","username","password"]
 };
 
 /**
- * a function that reloads the form as "log in" or "sign in"
+ * a function that reloads the form as "log in" or up"
  */
 function addFormInputs(key) {
     // const formBox = document.getElementById("formBox");
@@ -57,7 +57,7 @@ function addFormInputs(key) {
         button.textContent = "sing in";
         form.appendChild(button);
         button.onclick = () => { form.innerHTML = "";
-            addFormInputs("sign in");};
+            addFormInputs("sign up");};
     }
     else {
         button.textContent = "log in";
