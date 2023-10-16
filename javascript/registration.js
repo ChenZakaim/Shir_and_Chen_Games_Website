@@ -142,7 +142,7 @@ function handleSubmittedFormSignup() {
             localStorage.setItem("currentUser", JSON.stringify(newUser));
             alert("you signed up successfully! have fun:)");
         }
-
+        window.location.replace("../html/homepage.html");
 
 
     }
