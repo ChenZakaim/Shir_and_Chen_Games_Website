@@ -1,27 +1,27 @@
-#box{
+#box {
     /* display: grid; */
-    height:96vh;
-    width:70vw;
+    height: 96vh;
+    width: 70vw;
     margin: 15px auto;
     /* grid-template-columns: repeat(20, 1fr);
     grid-template-rows:  repeat(20, 1fr); */
     display: flex;
-    
-   background-image:url("/home/hilma/project1/images/sea.jpg");
-   background-size: cover;
-   /* z-index:0; */
+
+    background-image: url("/home/hilma/project1/images/sea.jpg");
+    background-size: cover;
+    /* z-index:0; */
 }
-.fish{
+
+.fish {
     height: 100px;
-    width:100px;
+    width: 100px;
     /* position: absolute; */
 }
 
-#sharkimg{
-    height:100px;
-    width:100px;
+#sharkimg {
+    height: 100px;
+    width: 100px;
     /* position: absolute; */
 }
-#box:click #shark{
- 
-}
+
+#box:click #shark {}

@@ -26,13 +26,4 @@ body{
 #local{
     text-decoration: none;
 }
-form {
-    width: 70vw;
-    padding: 1em;
-}
-#button {
-    width: rem;
-    height: rem;
-    color: white;
-    background-color: black;
-}
+
