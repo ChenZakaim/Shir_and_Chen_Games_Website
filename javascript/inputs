@@ -1,7 +1,7 @@
 //all the form inputs that the function will add according to the selected scenerio:
 const formInputs = {
     "log in": ["username", "password"],
-    "sign up": ["first name", "last name","Email","username","password"]
+    "sign up": ["first name", "last name","email    ","username","password"]
 };
 
 /**
@@ -54,7 +54,7 @@ function addFormInputs(key) {
     button.id = "button";
 
     if ( key === "log in") {
-        button.textContent = "sing in";
+        button.textContent = "sign in";
         form.appendChild(button);
         button.onclick = () => { form.innerHTML = "";
             addFormInputs("sign up");};

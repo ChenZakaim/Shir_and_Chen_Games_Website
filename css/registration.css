@@ -17,16 +17,16 @@ font-family: 'Tilt Neon', sans-serif;
     height:600px;
     margin:1vh auto;
     background-color: #fbb38d;
-    padding:15px;
+    padding:5px 0px; 
     /* line-height: 1.8; */
 }
 h2{
-    padding:15px;
+    padding-left:5px;
 }
 #button, #submit{
     float: right;
     margin:30px;
-    line-height: 2;
+    line-height: 1;
     font-size: 2rem;
     border-radius: 15px;
     border: 3px solid #f58b7e;
@@ -36,8 +36,8 @@ h2{
 }
 input{
    margin:5px 2px;
-    line-height: 2;
-    font-size: 2rem;
+    line-height: 1;
+    font-size: 1.5rem;
     border-radius: 15px;
     border: 3px solid #f58b7e;
 }
