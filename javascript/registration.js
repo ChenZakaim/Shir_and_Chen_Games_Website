@@ -14,8 +14,19 @@ function handleSubmittedForm(){
     if (title.textContent ==="sign up"){
         return handleSubmittedFormSignup() || true;
     }
-    else{
-
+    else{ const inputTags = document.getElementsByTagName("input");
+    let password;
+    let username;
+    for (let tag of inputTags){
+        if(tag.id==="password"){
+            password=tag.value
+        }
+        if(tag.id==="username"){
+           username=tag.value
+        }
+    }
+        return logIn(password,username);
+        
     }
 }
 
@@ -146,6 +157,21 @@ function handleSubmittedFormSignup() {
 
 
     }
+}
+function logIn(password,username){
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    for(let user of users){
+        if (user["userName"]=== username && user["password"]===password){
+            let userim=JSON.parse(localStorage.getItem("currentUser")||{});
+            userim=user;
+            localStorage.setItem("currentUser", JSON.stringify(userim));
+            window.location.href="../html/homepage.html";
+            return true;
+        }
+
+    
+    }
+    alert("Invalid user");
 }
 
 
