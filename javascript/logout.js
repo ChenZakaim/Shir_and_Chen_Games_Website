@@ -1,19 +1,8 @@
-//! check the file name type
-//! ctrl+shift+i 
-//! delete these comments when done 
-//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
-//! dont leave too much empty lines. 
-//! press ctrl+f on keyboard and type //! to find all comments in this file 
-//! delete console.logs when finished
-//! well done! 
-//! good luck!
-
-//! I think you should change to const
-let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-let logoutButton = document.getElementById("logout");
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const logoutButton = document.getElementById("logout");
 
 if (currentUser["username"] === "guest") {
-    logoutButton.textContent = "log in / sign up"
+    logoutButton.textContent = "log in / sign up";
     logoutButton.addEventListener("click", () => {
     window.location.assign("../html/index.html");
     });
@@ -22,30 +11,22 @@ else {
     logoutButton.addEventListener("click", LogOut);
 }
 
-
-
-
 function logIn(password, username) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    console.log('users (array): ', users);//! delete
     for (let user of users) {
-        console.log('user: ', user);//! delete
         if (user["username"] === username && user["password"] === password) {
             localStorage.setItem("currentUser", JSON.stringify(user));
             window.location.assign("../html/homepage.html");
             return true;
         }
-
-
     }
     alert("user does not exists.");
 }
 
-
 function LogOut() {
     let guest = { "first name": "", "last name": "", "email": "", "username": "guest", "password": "" };
     localStorage.setItem("currentUser", JSON.stringify(guest));
-    alert("logged out successfully!")
+    alert("logged out successfully!");
     window.location.assign("../html/index.html");
 }
 
