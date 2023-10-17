@@ -1,9 +1,19 @@
+//! ctrl+shift+i 
+//! delete these comments when done 
+//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
+//! dont leave too much empty lines. 
+//! press ctrl+f on keyboard and type //! to find all comments in this file 
+//! change the name of file to tastyPlanet (forgot the P) ;)
+//! delete console.logs when finished
+//! well done! 
+//! good luck!
+
 addFormInputs("log in");
 const formBox = document.getElementById("formBox");
 const form = document.getElementsByTagName("form")[0];
 const submit = document.getElementById("submit");
 
-
+//! try to figure out why the event is deprecated(marked),(maybe there is something missing?)
 function handleSubmittedForm(){
     event.preventDefault();
     const title = document.getElementById("title");
@@ -13,6 +23,7 @@ function handleSubmittedForm(){
         return handleSubmittedFormSignup() || true;
     }
     else{ const inputTags = document.getElementsByTagName("input");
+    //! try to change it to const (and declare them in different scope)
     let password;
     let username;
     for (let tag of inputTags){
@@ -31,50 +42,59 @@ function handleSubmittedForm(){
 function handleSubmittedFormSignup() {
     const inputTags = document.getElementsByTagName("input");
     let failed = false;
+    //!maybe you should try switch and case?
     for (let tag of inputTags) {
 
+        //! to make it easier type ctrl+f to search for console.log and delete what you dont need
+        //! delete console.logs when finished
         console.log('tag: ', tag);
         console.log('tag.name: ', tag.name);
 
+        //! why is there continue maybe it's better to have a not condition and return?
         if (tag.name === "submit" || tag.name === "button") {
+            //! delete console.logs when finished
             console.log("button");
             continue;
         }
+        //! delete console.logs when finished
         console.log('!checkName(tag.value): ', !checkName(tag.value));
         if ((tag.name === "first name" || tag.name === "last name") && !checkName(tag.value)) {
             alert(`invalid ${tag.id}!! a name should be english characters only.`);
             tag.style.borderColor = "red";
-            let failed = true;
+            let failed = true;//! I think you can delete this, it seems like it's not used?
             return false;
-            break;
+            break;//! I think you can delete this
         }
+        //! delete console.logs when finished
         console.log('!checkEmail(tag.value): ', !checkEmail(tag.value));
 
         if (tag.name === "Email" && !checkEmail(tag.value)) {
             alert(`invalid ${tag.id}!! an email should be in this form: lettesAndNumbers@domain`);
             tag.style.borderColor = "red";
-            let failed = true;
+            let failed = true;//! I think you can delete this, it seems like it's not used?
             return false;
 
-            break;
+            break;//! I think you can delete this
         }
+        //! delete console.logs when finished
         console.log('!checkUsername(tag.value): ', !checkUsername(tag.value));
         if (tag.name === "username" && !checkUsername(tag.value)) {
             alert(`invalid ${tag.id}!! a username should be .`);
             tag.style.borderColor = "red";
-            let failed = true;
+            let failed = true;//! delete?
             return false;
 
-            break;
+            break;//! delete?
         }
         if (tag.name === "password" && !checkPassword(tag.value)) {
             alert(`invalid ${tag.id}!! a password should be at least 8 characters long, and contain at least 1 upeercase and lowercase letters and a number.`);
             tag.style.borderColor = "red";
-            let failed = true;
+            let failed = true;// !delete?
             return false;
 
-            break;
+            break;//! delete
         }
+        //!who is this for? if its for user then use alert? 
         if (failed) {
             console.log("failed!!")
         }

@@ -1,9 +1,15 @@
+/* ctrl+shift+i */
+/* delete these comments when done */
+/* don't leave too much empty lines.  */
+/* well done!  */
+/* good luck! */
 #navigation {
     height: 15vh;
     width: 98vw;
     background-color: #fbb38d;
 }
 
+/* move this to top of file */
 body {
     background-color: #f58b7e;
     font-weight: bold;

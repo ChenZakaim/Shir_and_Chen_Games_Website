@@ -1,5 +1,14 @@
+//! check the file name type
+//! ctrl+shift+i 
+//! delete these comments when done 
+//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
+//! dont leave too much empty lines. 
+//! press ctrl+f on keyboard and type //! to find all comments in this file 
+//! delete console.logs when finished
+//! well done! 
+//! good luck!
 
-
+//! I think you should change to const
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 let logoutButton = document.getElementById("logout");
 
@@ -18,9 +27,9 @@ else {
 
 function logIn(password, username) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    console.log('users (array): ', users);
+    console.log('users (array): ', users);//! delete
     for (let user of users) {
-        console.log('user: ', user);
+        console.log('user: ', user);//! delete
         if (user["username"] === username && user["password"] === password) {
             localStorage.setItem("currentUser", JSON.stringify(user));
             window.location.assign("../html/homepage.html");

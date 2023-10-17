@@ -1,24 +1,36 @@
+//! check the file name type
+//! ctrl+shift+i 
+//! delete these comments when done 
+//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
+//! dont leave too much empty lines. 
+//! press ctrl+f on keyboard and type //! to find all comments in this file 
+//! delete console.logs when finished
+//! well done! 
+//! good luck!
+
+//! normally when creating consts variables that are used in other files,
+//! you write them with UPPER_CASE_LETTERS and _ between
 const regexEmail = /^\w+@[a-z]+.(com|org|net)$/i;
 const regexUsername = /^\w{2,12}$/;
 const regexName = /^[a-zA-Z]{2,12}$/;
 const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
 function checkName(value) {
-    console.log('regexName.test(value): ', regexName.test(value));
+    console.log('regexName.test(value): ', regexName.test(value));//!delete
     return regexName.test(value);
 }
 
 function checkUsername(value) {
-    console.log('regexUsername.test(value): ', regexUsername.test(value));
+    console.log('regexUsername.test(value): ', regexUsername.test(value));//!delete
     return regexUsername.test(value);
 }
 
 function checkPassword(value) {
-    console.log('regexPassword.test(value): ', regexPassword.test(value));
+    console.log('regexPassword.test(value): ', regexPassword.test(value));//!delete
     return regexPassword.test(value);
 }
 
 function checkEmail(value) {
-    console.log('regexEmail.test(value): ', regexEmail.test(value));
+    console.log('regexEmail.test(value): ', regexEmail.test(value));//!delete
     return regexEmail.test(value);
 }
