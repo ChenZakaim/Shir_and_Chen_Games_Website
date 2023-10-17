@@ -31,6 +31,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+.x0 {
+    color: transparent;
+}
 .x2{
     background-color: #b66878;
     color: #f68c76;
