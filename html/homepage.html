@@ -11,36 +11,24 @@
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/homepage.css" rel="stylesheet">
 </head>
-<!-- ctrl+shift+i -->
-<!-- delete these comments when done -->
-<!-- if you have changed names of variables here that are used in js/css files don't forget to change there as well -->
-<!-- dont leave too much empty lines one line between groups oe elements is fine -->
-<!-- press ctrl+f on keyboard and type <!-- to find all comments in this file -->
-<!-- amazing! -->
+
 <body>
     <nav id="navigation">
         <a><button id="logout">Log Out</button></a>
-        <!-- change to home-button or home-btn (shorter) -->
-        <div id="homebutton">
+        <div id="home-button">
             <a href="homepage.html"><img id="house" src="../images/house.png" height="80px" width="80px"></a>
         </div>
-        <!-- delete if not needed -->
-        <!-- <a><button id="logout">Log Out</button></a> -->
     </nav>
-    <!-- can this be at the bottom of the body element? -->
-    <!-- forgot to write the file type (happens to every one ;)) (check the file name too)-->
-    <script src="../javascript/logout"></script>
-
-
-    <!-- maybe the other games can be links to different games online? -->
+    <script src="../javascript/logout.js"></script>
     <h2 id="Games">Games</h2>
     <div id="grid-container" class="images">
-        <div class="image">
-            <img class="img" src="../images/cargame.jpeg" alt="Car Game">
-            <h3>Car Game</h3>
-            <!-- change to player ;) -->
-            <p>For one players</p>
-        </div>
+        <a href="https://www.crazygames.com/game/madalin-cars-multiplayer">
+            <div class="image">
+                <img class="img" src="../images/cargame.jpeg" alt="Car Game">
+                <h3>Car Game</h3>
+                <p>For one player</p>
+            </div>
+        </a>
         <a id="local" href="../html/2048.html">
             <div class="image">
                 <img class="img" src="../images/2048.png" alt="2048 Game">
@@ -48,53 +36,59 @@
                 <p>For one player</p>
             </div>
         </a>
-        <div class="image">
-            <img class="img" src="../images/princess.jpg" alt="princess dress up game">
-            <h3>Princess Dress Up Game</h3>
-            <p>For one player</p>
-        </div>
-        
-        <div class="image">
-            <img class="img" src="../images/angrybirds.jpeg" alt="Angry birds">
-            <h3>Angry Birds</h3>
-            <p>For one player</p>
-        </div>
+        <a href="https://www.disney--games.com/cinderella_dress_up_38.html">
+            <div class="image">
+                <img class="img" src="../images/princess.jpg" alt="princess dress up game">
+                <h3>Princess Dress Up Game</h3>
+                <p>For one player</p>
+            </div>
+        </a>
+        <a href="https://gameis.net/angry-birds-games/30984-angry-birds-classic.html">
+            <div class="image">
+                <img class="img" src="../images/angrybirds.jpeg" alt="Angry birds">
+                <h3>Angry Birds</h3>
+                <p>For one player</p>
+            </div>
+        </a>
+        <a href="https://www.twoplayergames.org/game/pill-soccer">
+            <div class="image">
+                <img class="img" src="../images/soccergame.webp" alt="soccer game">
 
-
-        <div class="image">
-            <img class="img" src="../images/soccergame.webp" alt="soccer game">
-            
-            <h3>Soccer Game</h3>
-            <p>For 2 players</p>
+                <h3>Soccer Game</h3>
+                <p>For 2 players</p>
+            </div>
+        </a>
+        <a href="https://www.miniplay.com/game/down-the-hill">
+            <div class="image">
+                <img class="img" src="../images/weirdgame.jpg" alt="weird game">
+                <h3>Down The Hill</h3>
+                <p>For one player</p>
+            </div>
+        </a>
+        <a href="https://poki.com/en/g/temple-run-2">
+            <div class="image">
+                <img class="img" src="../images/templarun.jpeg" alt="Templa Run">
+                <h3>Templa Run</h3>
+                <p>For one player</p>
+            </div>
+        </a>
+        <a href="https://happylearning.tv/en/games/quizzes/">
+            <div class="image">
+                <img class="img" src="../images/quizgame.png" alt="quiz">
+                <h3>Quiz Game</h3>
+                <p>For 2 players</p>
+            </div>
+        </a>
+        <a href="https://tauheed-game-dev.itch.io/taxi-rampage">
+            <div class="image">
+                <img class="img" src="../images/taxi.jpeg" alt="taxi name">
+                <h3>Taxi Rampage</h3>
+                <p>For one player</p>
+            </div>
         </div>
-        <div class="image">
-            <img class="img" src="../images/weirdgame.jpg" alt="weird game">
-            <h3>Down The Hill</h3>
-            <p>For one player</p>
-        </div>
-
-        <div class="image">
-            <img class="img" src="../images/templarun.jpeg" alt="Templa Run">
-            <h3>Templa Run</h3>
-            <p>For one player</p>
-        </div>
-        
-        
-        <div class="image">
-            <img class="img" src="../images/quizgame.png" alt="quiz">
-            <h3>Quiz Game</h3>
-            <p>For 2 players</p>
-
-        </div>
-        <div class="image">
-            <img class="img" src="../images/taxi.jpeg" alt="taxi name">
-            <h3>Taxi Rampage</h3>
-            <p>For one player</p>
-        </div>
-    </div>
+    </a>
     <footer>
-        <!-- change to This website (forgot the t) ;)-->
-        <p>this websie was created by Shir and Chen</p>
+        <p>This website was created by Shir and Chen</p>
     </footer>
 
 </body>

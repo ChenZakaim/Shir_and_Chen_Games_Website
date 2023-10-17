@@ -16,7 +16,7 @@ body {
     font-family: 'Space Mono', monospace;
 }
 
-#homebutton {
+#home-button {
     float: left;
     margin: 2px;
     padding: 10px;
