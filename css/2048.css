@@ -18,6 +18,8 @@ body{
     margin: 0 auto;
     display:flex;
     flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
 }
 .tile{
     width: 90px;
@@ -28,6 +30,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.x0 {
+    color: transparent;
 }
 .x2{
     background-color: #b66878;
