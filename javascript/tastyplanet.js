@@ -1,4 +1,13 @@
+//! ctrl+shift+i 
+//! delete these comments when done 
+//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
+//! dont leave too much empty lines. 
+//! press ctrl+f on keyboard and type //! to find all comments in this file 
+//! delete console.logs when finished
+//! well done! 
+//! good luck!
 
+//! try to use const
 let grid= document.getElementById("grid-container").addEventListener("click",go());
 let fish= document.getElementsById("fish1").addEventListener("click",go());
 
