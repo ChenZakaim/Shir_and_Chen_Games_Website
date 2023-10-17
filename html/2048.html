@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,14 +11,22 @@
     <link href="../css/2048.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
 </head>
+<!-- ctrl+shift+i -->
+<!-- delete these comments when done -->
+<!-- if you have changed names of variables here that are used in js/css files don't forget to change there as well -->
+<!-- dont leave too much empty lines one line between groups oe elements is fine -->
+<!-- press ctrl+f on keyboard and type <!-- to find all comments in this file -->
+<!-- well done! -->
 <body>
     <nav id="navigation">
         <a><button id="logout">Log Out</button></a>
-    <div id="homebutton">
-       <a href="homepage.html"><img src="../images/house.png" height="80px" width="80px"></a>
+        <!-- it's better to use - when giving class-names, id's, etc -->
+        <!-- change to home-button or home-btn (shorter) -->
+        <div id="homebutton">
+            <a href="homepage.html"><img src="../images/house.png" height="80px" width="80px"></a>
         </div>
-     <a><button id="logout">Log Out</button></a>
-        </nav>
+        <a><button id="logout">Log Out</button></a>
+    </nav>
     <h1>2048</h1>
     <hr>
     <h2>Score:<span id="score">0</span></h2>
@@ -31,7 +40,10 @@
         <div></div>
 
 
-    </div> 
+    </div>
 </body>
 <script src="../javascript/2048.js"></script>
-</html> 
+<!-- forgot to write the file type (happens to every one ;)) -->
+<script src="../javascript/logout"></script>
+
+</html>
