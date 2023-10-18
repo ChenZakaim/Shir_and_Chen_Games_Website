@@ -5,10 +5,12 @@ body {
     min-height: 100vh;
     background-color: #e3f2fd;
 }
-nav{
+
+nav {
     position: absolute;
-    top:10px;
+    top: 10px;
 }
+
 .wrapper {
     width: 85vmin;
     height: 75vmin;
@@ -18,7 +20,7 @@ nav{
     border-radius: 5px;
     overflow: hidden;
     justify-content: space-between;
-    margin-top:10vh;
+    margin-top: 10vh;
 }
 
 .gamedetails {
@@ -52,38 +54,44 @@ span {
 .playboard .head {
     background-color: #f58b7e;
 }
-#reset{
-    height:50px;
-    width:100px;
+
+#reset {
+    height: 50px;
+    width: 100px;
     background-color: #e95853;
-    border:2px solid #fbb38d;
+    border: 2px solid #fbb38d;
     border-radius: 10px;
     position: absolute;
     top: 19vh;
-    left:18vw;
+    left: 18vw;
 
 }
+
 #gamegif {
-    width:50%;
+    width: 50%;
     align-self: center;
 }
-#overtext{
- display: flex;
- justify-content: center;
- justify-items: center;
+
+#overtext {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
+
 .reset:hover {
     color: #ff9100;
     cursor: pointer;
     border: 1px solid #b66878;
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
     perspective: 1000px;
 }
+
 #game-over-gif {
-    width:30%;
+    width: 30%;
     align-self: center;
 }
+
 .game-button {
     max-height: fit-content;
     box-sizing: border-box;
@@ -98,17 +106,25 @@ span {
 }
 
 @keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
     }
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
     }
-    
-    30%, 50%, 70% {
-      transform: translate3d(-2px, 0, 0);
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
     }
-    40%, 60% {
-      transform: translate3d(2px, 0, 0);
-  }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
 }
