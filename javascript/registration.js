@@ -110,6 +110,7 @@ function handleSubmittedFormSignup() {
         if (!failed) {
 
             users.push(newUser);
+            newUser.userNum = users.indexOf(newUser);
             localStorage.setItem("users", JSON.stringify(users));
             localStorage.setItem("currentUser", JSON.stringify(newUser));
             alert("you signed up successfully! have fun:)");

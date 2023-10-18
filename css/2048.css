@@ -15,7 +15,8 @@ body {
     max-width: 42em;
     margin: 0 auto;
     padding: 1em;
-    background-color: #ffb7b5;
+    background-color: #ffa8a5;
+    border-radius: 30px;
 }
 nav #homebutton{
     float: left;

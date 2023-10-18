@@ -1,10 +1,12 @@
 const HTML_BOARD = document.getElementById("board");
+const USERS = JSON.parse(localStorage.getItem("users"))
+currentUser = JSON.parse(localStorage.getItem("currentUser"));
+let hitRecord = false;
 
 let board = createBoard();
 updateHtmlBoard(board);
 
 function reset(HTML_BOARD) {
-    HTML_BOARD.innerHTML = "";
     HTML_BOARD.style.flexDirection = "row";
     HTML_BOARD.focus();
     board = createBoard();
@@ -21,7 +23,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
 
             for (let row = 0; row < board.length; row++) {
                 for (let col = 0; col < board[row].length; col++) {
-                    for (let i = row + 1; i < board.length - 1; i++) {
+                    for (let i = row + 1; i < board.length; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextR = row + 1;
@@ -87,7 +89,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
             // in this case, the next tile is at BOARD[row][col+1]
             for (let row = 0; row < board.length; row++) {
                 for (let col = 0; col < board[row].length; col++) {
-                    for (let i = col + 1; i < board[row].length - 1; i++) {
+                    for (let i = col + 1; i < board[row].length; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
 
@@ -122,7 +124,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
 
             for (let row = 0; row < board.length; row++) {
                 for (let col = board[row].length - 1; col >= 0; col--) {
-                    for (let i = col - 1; i >= 1; i--) {
+                    for (let i = col - 1; i >= 0; i--) {
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextC = col - 1;
                         while (nextC < board.length && nextC > 0 && board[row][nextC] === 0) {
@@ -155,9 +157,10 @@ document.getElementById("board").addEventListener("keydown", (event) => {
     add2randomly(board);
 });
 
-
 function createBoard() {
-    (localStorage.setItem("scoreLastGame2048", 0));
+    currentUser.scoreLastGame2048 = 0;
+    HTML_BOARD.innerHTML = "";
+    localStorage.setItem("currentUser", currentUser);
     addToScore(0);
     const board =
         [[0, 0, 0, 0],
@@ -199,20 +202,24 @@ function addToScore(num) {
     const HTML_SCORE_DIV = document.getElementById("score");
     const HTML_BEST_SCORE_DIV = document.getElementById("best-score");
 
-    let score = parseInt(localStorage.getItem("scoreLastGame2048")) || 0;
-    let bestScore = parseInt(localStorage.getItem("bestScore2048")) || 0;
+    let score = currentUser.scoreLastGame2048 || 0;
+    let bestScore = currentUser.bestScoreGame2048 || 0;
 
     score += num;
-    HTML_SCORE_DIV.textContent = "Score: \n" + score;
-
+    currentUser.scoreLastGame2048 = score;
+    
+    if (!isNaN(bestScore) && !isNaN(score) && score >= bestScore) {
+        currentUser.bestScoreGame2048 = score;
+        bestScore = score;
+        hitRecord = true;
+    }
     if (!isNaN(score)) {
-        localStorage.setItem("scoreLastGame2048", score);
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        USERS[currentUser.userNum] = currentUser;
+        localStorage.setItem("users", JSON.stringify(USERS));
     }
-
-    if (!isNaN(bestScore) && score > bestScore) {
-        localStorage.setItem("bestScore2048", score);
-        bestScore = parseInt(localStorage.getItem("bestScore2048")) || 0;
-    }
+    
+    HTML_SCORE_DIV.textContent = "Score: \n" + score;
     HTML_BEST_SCORE_DIV.textContent = "Best Score: \n" + bestScore;
 
 }
@@ -247,7 +254,15 @@ function gameOver() {
     HTML_BOARD.appendChild(document.createElement("h2"));
     HTML_BOARD.firstChild.textContent = "Game over:(";
     HTML_BOARD.appendChild(document.createElement("img"));
-    HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
+
+    if(hitRecord){
+        HTML_BOARD.lastChild.src = "https://media.giphy.com/media/SvctpQCJmlG9ccyZMh/giphy.gif";
+        HTML_BOARD.firstChild.innerHTML += "<h2>new record!<h2/>"
+    }
+    else {
+        HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
+    }
+    
     HTML_BOARD.lastChild.id = "game-over-gif";
 
     HTML_BOARD.appendChild(document.createElement("div"));
