@@ -41,7 +41,7 @@ hr {
     justify-content: space-evenly;
 }
 #board:focus-visible{
-    outline-color: transparent;
+    outline-color: rgb(255, 241, 120);
 }
 .game-button {
     max-height: fit-content;

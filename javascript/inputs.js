@@ -13,7 +13,7 @@ function addFormInputs(key) {
     title.textContent = key;// changing the form title
 
     const form = document.getElementsByTagName("form")[0];
-
+    let newInput;
     for (let i = 0; i < formInputs[key].length; i++) {
 
         //creates new label tag
@@ -21,31 +21,27 @@ function addFormInputs(key) {
         newLabel.setAttribute("for", formInputs[key][i]);
         newLabel.textContent = formInputs[key][i];
         //creates new input tag
-        let newInput = document.createElement("input");
+        newInput = document.createElement("input");
         newInput.name = formInputs[key][i];
         newInput.id = formInputs[key][i];
+        newInput.type = "text";
 
         //attaches new tags to the form
         newInput.setAttribute('required', '');
         form.appendChild(newLabel);
         form.appendChild(newInput);
 
-        //! i think this can be outside the for instead of checking every iteration 
-        //! if this is the password input
-        //defines type - password to passwords, others = text. adds eye to password
-        if (formInputs[key][i] === "password") {
-            newInput.type = "password";
-            let eye = document.createElement("i");
-            eye.className = "far fa-eye";
-            eye.id = "togglePassword";
-            eye.style.fontSize = "0.73em";
-            form.appendChild(eye);
-            setEyeEvent();
-        }
-        else {
-            newInput.type = "text";
-        }
     }
+
+    //defines type password (which is the last one to be "newInput") to passwords,
+    //others = text. adds eye to password
+    newInput.type = "password";
+    let eye = document.createElement("i");
+    eye.className = "far fa-eye";
+    eye.id = "togglePassword";
+    eye.style.fontSize = "0.73em";
+    form.appendChild(eye);
+    setEyeEvent();
 
     //adds submit button
     const BUTTONS_CONTAINER = document.createElement("div");
@@ -57,7 +53,6 @@ function addFormInputs(key) {
     SUBMIT.id = "submit";
     BUTTONS_CONTAINER.appendChild(SUBMIT);
 
-    //! if this is let than use lower case
     let button = document.createElement("button");
     button.type = "button";
     button.id = "button";

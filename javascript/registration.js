@@ -1,14 +1,6 @@
-//! ctrl+shift+i 
-//! delete these comments when done 
-//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
-//! dont leave too much empty lines. 
-//! press ctrl+f on keyboard and type //! to find all comments in this file 
-//! change the name of file to tastyPlanet (forgot the P) ;)
-//! delete console.logs when finished
-//! well done! 
-//! good luck!
 
 addFormInputs("log in");
+
 const formBox = document.getElementById("formBox");
 const form = document.getElementsByTagName("form")[0];
 const submit = document.getElementById("submit");
@@ -77,6 +69,7 @@ function handleSubmittedFormSignup() {
     //add new user to local storage
     if (!failed) {
         let newUser = {};
+
         for (let tag of inputTags) {
             if (tag.id === "submit" || tag.id === "button") {
                 continue;
@@ -108,8 +101,8 @@ function handleSubmittedFormSignup() {
 
 
         if (!failed) {
-
             users.push(newUser);
+            newUser.snakeHighScore = 0;
             newUser.userNum = users.indexOf(newUser);
             localStorage.setItem("users", JSON.stringify(users));
             localStorage.setItem("currentUser", JSON.stringify(newUser));
