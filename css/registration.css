@@ -1,8 +1,7 @@
-/* ctrl+shift+i */
-/* delete these comments when done */
-/* don't leave too much empty lines.  */
-/* well done!  */
-/* good luck! */
+body {
+    font-size: 2rem;
+}
+
 #form {
     display: flex;
     flex-direction: column;
@@ -62,10 +61,7 @@ input {
     border: 3px solid #f58b7e;
 }
 
-/*move this to the top*/
-body {
-    font-size: 2rem;
-}
+
 
 #buttonsContainer {
     display: flex;

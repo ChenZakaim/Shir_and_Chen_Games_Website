@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="../css/snake.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="gamedetails">
-            <span class="score">Score: 0</span>
-            <span class="highscore">High score: 30</span>
+    <nav id="navigation">
+        <a><button id="logout">Log Out</button></a>
+        <div id="home-button">
+            <a href="homepage.html"><img id="house" src="../images/house.png" height="80px" width="80px"></a>
         </div>
-        <div class="playboard"></div>
-    </div>
+    </nav>
+        <div class="wrapper">
+            <div class="gamedetails">
+                <span class="score">Score: 0</span>
+                <span class="highscore">High score: 30</span>
+            </div>
+            <div class="playboard"></div>
+        </div>
 
 </body>
-<script src="../javascript/snake.js" defer ></script>
+<script src="../javascript/snake.js" defer></script>
 
 </html>

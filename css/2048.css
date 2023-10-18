@@ -1,88 +1,107 @@
-/* ctrl+shift+i */
-/* delete these comments when done */
-/* don't leave too much empty lines.  */
-/* well done!  */
-/* good luck! */
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     background-color: #e95853;
-}hr{
+}
+nav #homebutton{
+    float: left;
+    margin: 2px;
+    padding: 10px;
+    
+}
+hr {
     width: 500px;
 }
-#board{
-    width:480px;
-    height:480px;
+
+#board {
+    width: 480px;
+    height: 480px;
     background-color: #fbb38d;
     border: 6px solid #f58b7e;
     margin: 0 auto;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-evenly;
 }
-.tile{
+
+.tile {
     width: 90px;
-    height:90px;
-    border:5px solid #ac6d7a;
+    height: 90px;
+    border: 5px solid #f58b7e;
     font-size: 40px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .x0 {
     color: transparent;
 }
-.x2{
-    background-color: #b66878;
-    color: #f68c76;
+
+.x2 {
+    background-color: #e67e7e;
+    color: black;
 }
-.x4{
-    background-color: #C98895;
-    color: #f68c76;
+
+.x4 {
+    background-color: #e75e70;
+    color:  black;
 }
-.x8{
-    background-color: #D49BA7;
-    color: #f68c76;
+
+.x8 {
+    background-color: #e65970;
+    color:  black;
 }
-.x16{
+
+.x16 {
     background-color: #daabb5;
-    color: #f68c76;
+    color:  black;
 }
-.x32{
+
+.x32 {
     background-color: #efc3ca;
-    color: #f68c76;
+    color:  black;
 }
-.x64{
+
+.x64 {
     background-color: #ffc5cb;
-    color: #f68c76;
+    color:  black;
 }
-.x128{
+
+.x128 {
     background-color: #c4808a;
-    color: #f68c76;
+    color:  black;
 }
-.x256{
+
+.x256 {
     background-color: #C08081;
-    color: #f68c76;
+    color: black;
 }
-.x512{
+
+.x512 {
     background-color: #C38683;
-    color: #f68c76;
+    color:  black;
 }
-.x1024{
+
+.x1024 {
     background-color: #E08582;
-    color: #f68c76;
+    color:  black;
 }
-.x2048{
+
+.x2048 {
     background-color: #F79391;
-    color: #f68c76;
+    color:  black;
 }
-.x4096{
+
+.x4096 {
     background-color: #faaba2;
-    color: #f68c76;
+    color:  black;
 }
-.x8192{
+
+.x8192 {
     background-color: #e3acac;
-    color: #f68c76;
+    color:  black;
 }

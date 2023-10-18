@@ -25,6 +25,7 @@ const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() *30) + 1;
 }
+//check what key u press on and change ths direction :)
 const changeDirection = e => {
     if (e.key === "ArrowUp" && velocityY !=1) {
         velocityX = 0;
@@ -53,9 +54,9 @@ const initGame = () => {
     //checking if the snake eats the food :)
     if(snakeX === foodX && snakeY === foodY){
         changeFoodPosition();
-        snakeBody.push([foodX,foodY]);//pushing food position to snake body array
-        score++;// score increase by 1 
-        highScore = score >= highScore ? score:highScore
+        snakeBody.push([foodX,foodY]);//pushing food position to snake body array :)
+        score++;// score increase by 1 ;)
+        highScore = score >= highScore ? score:highScore ; 
         localStorage.setItem("highscore", highScore)
         scoreElement.innerHTML = `Score: ${score}`;
         highScoreElement.innerHTML = `High Score: ${highScore}`;
