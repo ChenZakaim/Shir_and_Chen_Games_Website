@@ -2,6 +2,19 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+}
+
+#game-container-2048 {
+    display: grid;
+    grid-template-areas:
+    "bestScore score reset"
+    "game game game";
+    justify-content: center;
+    justify-items: center;
+    background-color: #ffc2c0;
+    max-width: 42em;
+    margin: 0 auto;
+    padding: 5px;
     background-color: #e95853;
 }
 nav #homebutton{
@@ -15,9 +28,9 @@ hr {
 }
 
 #board {
-    width: 480px;
-    height: 480px;
+
     background-color: #fbb38d;
+
     border: 6px solid #f58b7e;
     margin: 0 auto;
     display: flex;
@@ -25,11 +38,47 @@ hr {
     align-content: space-around;
     justify-content: space-evenly;
 }
-
+#board:focus-visible{
+    outline-color: transparent;
+}
+.game-button {
+    max-height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid white;
+    margin: 1em 0;
+    padding: 0.4em;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+}
+#score {
+    grid-area: score;
+}
+#best-score {
+    grid-area: bestScore;
+}
+#reset {
+    grid-area: reset;
+}
+.reset:hover {
+    color: #ff9100;
+    cursor: pointer;
+    border: 1px solid #b66878;
+}
+#game-over-gif {
+    width:30%;
+    align-self: center;
+}
+/* tiles classes */
 .tile {
     width: 90px;
     height: 90px;
+    border: 5px solid #ac6d7a;
+    width: 90px;
+    height: 90px;
     border: 5px solid #f58b7e;
+
     font-size: 40px;
     font-weight: bold;
     display: flex;
@@ -37,71 +86,72 @@ hr {
     align-items: center;
 }
 
+
 .x0 {
     color: transparent;
 }
 
 .x2 {
-    background-color: #e67e7e;
-    color: black;
+    background-color: #b66878;
+    color: #42251f;
 }
 
 .x4 {
-    background-color: #e75e70;
-    color:  black;
+    background-color: #C98895;
+    color: #42251f;
 }
 
 .x8 {
-    background-color: #e65970;
-    color:  black;
+    background-color: #D49BA7;
+    color: #42251f;
 }
 
 .x16 {
     background-color: #daabb5;
-    color:  black;
+    color: #42251f;
 }
 
 .x32 {
     background-color: #efc3ca;
-    color:  black;
+    color: #42251f;
 }
 
 .x64 {
     background-color: #ffc5cb;
-    color:  black;
+    color: #42251f;
 }
 
 .x128 {
     background-color: #c4808a;
-    color:  black;
+    color: #42251f;
 }
 
 .x256 {
     background-color: #C08081;
-    color: black;
+    color: #42251f;
 }
 
 .x512 {
     background-color: #C38683;
-    color:  black;
+    color: #42251f;
 }
 
 .x1024 {
     background-color: #E08582;
-    color:  black;
+    color: #42251f;
 }
 
 .x2048 {
     background-color: #F79391;
-    color:  black;
+    color: #42251f;
 }
 
 .x4096 {
     background-color: #faaba2;
-    color:  black;
+    color: #42251f;
 }
 
 .x8192 {
     background-color: #e3acac;
-    color:  black;
+    color: #42251f;
 }

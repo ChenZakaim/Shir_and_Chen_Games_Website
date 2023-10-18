@@ -1,41 +1,47 @@
-//! ctrl+shift+i
-//! don't forget to delete console.logs when done
-//! well done!
+const HTML_BOARD = document.getElementById("board");
 
-const BOARD = createBoard();
-updateHtmlBoard(BOARD);
+let board = createBoard();
+updateHtmlBoard(board);
 
+function reset(HTML_BOARD) {
+    HTML_BOARD.innerHTML = "";
+    HTML_BOARD.style.flexDirection = "row";
+    board = createBoard();
+    updateHtmlBoard(board);
+}
+document.getElementById("reset").addEventListener("click", () => { reset(HTML_BOARD) });
+document.getElementById("board").addEventListener("click", () => { document.body.style.overflow = "Hidden"; })
 document.getElementById("board").addEventListener("keydown", (event) => {
     switch (event.key) {
         case "ArrowUp":
             // Arrow up: scan from top to bottom, left to right
             // in this case, the next tile is at BOARD[row+1][col]
 
-            for (let row = 0; row < BOARD.length; row++) {
-                for (let col = 0; col < BOARD[row].length; col++) {
-                    for (let i = row + 1; i < BOARD.length - 1; i++) {
+            for (let row = 0; row < board.length; row++) {
+                for (let col = 0; col < board[row].length; col++) {
+                    for (let i = row + 1; i < board.length - 1; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextR = row + 1;
 
-                        while (nextR < BOARD.length && nextR > 0 && BOARD[nextR][col] === 0) {
-                            for (let i = nextR; i < BOARD.length - 1; i++) {
-                                BOARD[i][col] = BOARD[i + 1][col];
+                        while (nextR < board.length && nextR > 0 && board[nextR][col] === 0) {
+                            for (let i = nextR; i < board.length - 1; i++) {
+                                board[i][col] = board[i + 1][col];
                             }
-                            BOARD[BOARD.length - 1][col] = 0
+                            board[board.length - 1][col] = 0
                             nextR++;
                         }
                         //if it is a 0 but not last one, move all up
-                        if (row < BOARD.length - 1 && BOARD[row][col] === 0) {
-                            for (let i = row; i < BOARD.length - 1; i++) {//same "for" as in the "while" above, just starting at current instead of next
-                                BOARD[i][col] = BOARD[i + 1][col] || 0;
+                        if (row < board.length - 1 && board[row][col] === 0) {
+                            for (let i = row; i < board.length - 1; i++) {//same "for" as in the "while" above, just starting at current instead of next
+                                board[i][col] = board[i + 1][col] || 0;
                             }
-                            BOARD[BOARD.length - 1][col] = 0
+                            board[board.length - 1][col] = 0
                             //if there is no 0 in this current one, find out if merge needed with the next one
-                        } else if (row < BOARD.length - 1 && BOARD[row][col] === BOARD[row + 1][col]) {
-                            BOARD[row][col] += BOARD[row + 1][col];
-                            BOARD[row + 1][col] = 0;
-                            addToScore(BOARD[row][col]);
+                        } else if (row < board.length - 1 && board[row][col] === board[row + 1][col]) {
+                            board[row][col] += board[row + 1][col];
+                            board[row + 1][col] = 0;
+                            addToScore(board[row][col]);
                         }
                     }
                 }
@@ -44,31 +50,31 @@ document.getElementById("board").addEventListener("keydown", (event) => {
         case "ArrowDown":
             // Arrow down: scan from bottom to top, left to right
             // in this case, the next tile is at BOARD[row-1][col]
-            for (let row = BOARD.length - 1; row >= 0; row--) {
-                for (let col = 0; col < BOARD[row].length; col++) {
+            for (let row = board.length - 1; row >= 0; row--) {
+                for (let col = 0; col < board[row].length; col++) {
                     for (let i = row - 1; i >= 0; i--) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextR = row - 1;
-                        while (nextR < BOARD.length && nextR > 0 && BOARD[nextR][col] === 0) {
+                        while (nextR < board.length && nextR > 0 && board[nextR][col] === 0) {
                             for (let i = nextR; i >= 1; i--) {
-                                BOARD[i][col] = BOARD[i - 1][col];
+                                board[i][col] = board[i - 1][col];
                             }
-                            BOARD[0][col] = 0;
+                            board[0][col] = 0;
                             nextR--;
                         }
                         //if it is a 0 but not last one, move all down
-                        if (row > 0 && BOARD[row][col] === 0) {
+                        if (row > 0 && board[row][col] === 0) {
                             for (let i = row; i >= 1; i--) {
-                                BOARD[i][col] = BOARD[i - 1][col] || 0;
+                                board[i][col] = board[i - 1][col] || 0;
                             }
-                            BOARD[0][col] = 0;
+                            board[0][col] = 0;
 
                             //if there is no 0 in this current one, find out if merge needed with the next one
-                        } else if (row > 0 && BOARD[row][col] === BOARD[row - 1][col]) {
-                            BOARD[row][col] += BOARD[row - 1][col];
-                            BOARD[row - 1][col] = 0;
-                            addToScore(BOARD[row][col]);
+                        } else if (row > 0 && board[row][col] === board[row - 1][col]) {
+                            board[row][col] += board[row - 1][col];
+                            board[row - 1][col] = 0;
+                            addToScore(board[row][col]);
                         }
                     }
                 }
@@ -77,32 +83,32 @@ document.getElementById("board").addEventListener("keydown", (event) => {
         case "ArrowLeft":
             // Arrow left: scan from top to bottom, left to right
             // in this case, the next tile is at BOARD[row][col+1]
-            for (let row = 0; row < BOARD.length; row++) {
-                for (let col = 0; col < BOARD[row].length; col++) {
-                    for (let i = col + 1; i < BOARD[row].length - 1; i++) {
+            for (let row = 0; row < board.length; row++) {
+                for (let col = 0; col < board[row].length; col++) {
+                    for (let i = col + 1; i < board[row].length - 1; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
 
                         let nextC = col + 1;
-                        while (nextC < BOARD.length && nextC > 0 && BOARD[row][nextC] === 0) {
-                            for (let i = nextC; i < BOARD[row].length - 1; i++) {
-                                BOARD[row][i] = BOARD[row][i + 1];
+                        while (nextC < board.length && nextC > 0 && board[row][nextC] === 0) {
+                            for (let i = nextC; i < board[row].length - 1; i++) {
+                                board[row][i] = board[row][i + 1];
                             }
-                            BOARD[row][BOARD[row].length - 1] = 0
+                            board[row][board[row].length - 1] = 0
                             nextC++;
                         }
 
                         //if it is a 0 but not last one, move all left
-                        if (col < BOARD[row].length - 1 && BOARD[row][col] === 0) {
-                            for (let i = col; i < BOARD[row].length - 1; i++) {
-                                BOARD[row][i] = BOARD[row][i + 1];
+                        if (col < board[row].length - 1 && board[row][col] === 0) {
+                            for (let i = col; i < board[row].length - 1; i++) {
+                                board[row][i] = board[row][i + 1];
                             }
-                            BOARD[row][BOARD[row].length - 1] = 0
+                            board[row][board[row].length - 1] = 0
                             //if there is no 0 in this current one, find out if merge needed with the next one
-                        } else if (col < BOARD[row].length - 1 && BOARD[row][col] === BOARD[row][col + 1]) {
-                            BOARD[row][col] += BOARD[row][col + 1];
-                            BOARD[row][col + 1] = 0;
-                            addToScore(BOARD[row][col]);
+                        } else if (col < board[row].length - 1 && board[row][col] === board[row][col + 1]) {
+                            board[row][col] += board[row][col + 1];
+                            board[row][col + 1] = 0;
+                            addToScore(board[row][col]);
                         }
                     }
                 }
@@ -112,30 +118,30 @@ document.getElementById("board").addEventListener("keydown", (event) => {
             // Arrow right: scan from top to bottom, right to left
             // in this case, the next tile is at BOARD[row][col-1]
 
-            for (let row = 0; row < BOARD.length; row++) {
-                for (let col = BOARD[row].length - 1; col >= 0; col--) {
+            for (let row = 0; row < board.length; row++) {
+                for (let col = board[row].length - 1; col >= 0; col--) {
                     for (let i = col - 1; i >= 1; i--) {
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextC = col - 1;
-                        while (nextC < BOARD.length && nextC > 0 && BOARD[row][nextC] === 0) {
+                        while (nextC < board.length && nextC > 0 && board[row][nextC] === 0) {
                             for (let i = nextC; i >= 1; i--) {
-                                BOARD[row][i] = BOARD[row][i - 1];
+                                board[row][i] = board[row][i - 1];
                             }
-                            BOARD[row][0] = 0;
+                            board[row][0] = 0;
                             nextC--;
                         }
                         //if it is a 0 but not last one, move all right
-                        if (col > 0 && BOARD[row][col] === 0) {
+                        if (col > 0 && board[row][col] === 0) {
                             for (let i = col; i >= 1; i--) {
-                                BOARD[row][i] = BOARD[row][i - 1];
+                                board[row][i] = board[row][i - 1];
                             }
-                            BOARD[row][0] = 0;
+                            board[row][0] = 0;
 
                             //if there is no 0 in this current one, find out if merge needed with the next one
-                        } else if (col > 0 && BOARD[row][col] === BOARD[row][col - 1]) {
-                            BOARD[row][col] += BOARD[row][col - 1];
-                            BOARD[row][col - 1] = 0;
-                            addToScore(BOARD[row][col]);
+                        } else if (col > 0 && board[row][col] === board[row][col - 1]) {
+                            board[row][col] += board[row][col - 1];
+                            board[row][col - 1] = 0;
+                            addToScore(board[row][col]);
                         }
                     }
                 }
@@ -143,14 +149,14 @@ document.getElementById("board").addEventListener("keydown", (event) => {
             break;
         default:
     }
-    updateHtmlBoard(BOARD);
-    add2randomly(BOARD);
+    updateHtmlBoard(board);
+    add2randomly(board);
 });
 
 
 function createBoard() {
     (localStorage.setItem("scoreLastGame2048", 0));
-
+    addToScore(0);
     const board =
         [[0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -167,10 +173,7 @@ function createBoard() {
     return board;
 }
 
-
 function updateHtmlBoard(arrBoard) {
-    const HTML_BOARD = document.getElementById("board");
-    console.dir(HTML_BOARD);
 
     let isEmpty = (HTML_BOARD.firstChild === null);
     let tile;
@@ -194,12 +197,14 @@ function updateHtmlBoard(arrBoard) {
 }
 
 function addToScore(num) {
-    const HTML_SCORE_SPAN = document.getElementById("score");
+    const HTML_SCORE_DIV = document.getElementById("score");
+    const HTML_BEST_SCORE_DIV = document.getElementById("best-score");
+
     let score = parseInt(localStorage.getItem("scoreLastGame2048")) || 0;
     let bestScore = parseInt(localStorage.getItem("bestScore2048")) || 0;
 
     score += num;
-    HTML_SCORE_SPAN.textContent = score;
+    HTML_SCORE_DIV.textContent = "Score: \n" + score;
 
     if (!isNaN(score)) {
         localStorage.setItem("scoreLastGame2048", score);
@@ -207,15 +212,18 @@ function addToScore(num) {
 
     if (!isNaN(bestScore) && score > bestScore) {
         localStorage.setItem("bestScore2048", score);
+        bestScore = parseInt(localStorage.getItem("bestScore2048")) || 0;
     }
+    HTML_BEST_SCORE_DIV.textContent = "Best Score: \n" + bestScore;
+
 }
-function add2randomly(BOARD) {
-    console.log('BOARD: ', BOARD);
+function add2randomly(board) {
+    console.log('BOARD: ', board);
 
     num = Math.floor(Math.random() * 4);
     num2 = Math.floor(Math.random() * 4);
-    if (BOARD[num][num2] === 0) {
-        BOARD[num][num2] = 2;
+    if (board[num][num2] === 0) {
+        board[num][num2] = 2;
     }
     else {
         if (document.getElementsByClassName("x0").length === 0) {
@@ -224,7 +232,7 @@ function add2randomly(BOARD) {
         else {
             let arrNum = -1;//! delete if not used
             let index = -1;
-            for (const arr of BOARD) {
+            for (const arr of board) {
                 if (index !== -1) {
                     break;
 
@@ -237,9 +245,17 @@ function add2randomly(BOARD) {
 
 
 function gameOver() {
-    const HTML_BOARD = document.getElementById("board");
     HTML_BOARD.innerHTML = "";
+    HTML_BOARD.style.flexDirection = "column";
     HTML_BOARD.appendChild(document.createElement("h2"));
-    HTML_BOARD.firstChild.textContent = "Game over!";
-}
+    HTML_BOARD.firstChild.textContent = "Game over:(";
+    HTML_BOARD.appendChild(document.createElement("img"));
+    HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
+    HTML_BOARD.lastChild.id = "game-over-gif";
 
+    HTML_BOARD.appendChild(document.createElement("div"));
+    HTML_BOARD.lastChild.textContent = "start again";
+    HTML_BOARD.lastChild.className = "game-button reset";
+    HTML_BOARD.lastChild.addEventListener("click", () => {reset(HTML_BOARD);});
+
+}
