@@ -1,3 +1,6 @@
+//! ctrl+shift+i
+//! don't forget to delete console.logs when done
+//! well done!
 
 const BOARD = createBoard();
 updateHtmlBoard(BOARD);
@@ -219,7 +222,7 @@ function add2randomly(BOARD) {
             gameOver();
         }
         else {
-            let arrNum = -1;
+            let arrNum = -1;//! delete if not used
             let index = -1;
             for (const arr of BOARD) {
                 if (index !== -1) {

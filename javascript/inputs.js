@@ -1,30 +1,13 @@
-//! check the file name type
-//! ctrl+shift+i 
-//! delete these comments when done 
-//! if you have changed names of variables here that are used in js/css/html files don't forget to change there as well 
-//! dont leave too much empty lines. 
-//! press ctrl+f on keyboard and type //! to find all comments in this file 
-//! delete console.logs when finished
-//! well done! 
-//! good luck!
-
 //all the form inputs that the function will add according to the selected scenerio:
 const formInputs = {
     "log in": ["username", "password"],
     "sign up": ["first name", "last name", "email", "username", "password"]
 };
 
-
-
-
-
 /**
- * a function that reloads the form as "log in" or up"
+ * a function that reloads the form as "log in" or "sign" up"
  */
 function addFormInputs(key) {
-    //! delete if not needed
-    // const formBox = document.getElementById("formBox");
-
     const title = document.getElementById("title");
     title.textContent = key;// changing the form title
 
@@ -61,52 +44,44 @@ function addFormInputs(key) {
         else {
             newInput.type = "text";
         }
-
-
     }
 
-
-    //! try to change these variables to const
     //adds submit button
-    let buttonsContainer = document.createElement("div");
-    buttonsContainer.id = "buttonsContainer";
+    const BUTTONS_CONTAINER = document.createElement("div");
+    BUTTONS_CONTAINER.id = "buttonsContainer";
 
+    const SUBMIT = document.createElement("input");
+    SUBMIT.type = "submit";
+    SUBMIT.value = key;
+    SUBMIT.id = "submit";
+    BUTTONS_CONTAINER.appendChild(SUBMIT);
 
-    let submit = document.createElement("input");
-    submit.type = "submit";
-    submit.value = key;
-    submit.id = "submit";
-    buttonsContainer.appendChild(submit);
-
-    let button = document.createElement("button");
-    button.type = "button";
-    button.id = "button";
+    //! if this is let than use lower case
+    let BUTTON = document.createElement("button");
+    BUTTON.type = "button";
+    BUTTON.id = "button";
     //set button value
-    //! maybe try switch case?
-    if (key === "log in") {
-        button.textContent = "sign up";
-        buttonsContainer.appendChild(button);
-        button.onclick = () => {
-            form.innerHTML = "";
-            addFormInputs("sign up");
-        };
-    }
-    else {
-        button.textContent = "log in";
-        buttonsContainer.appendChild(button);
-        button.onclick = () => {
-            form.innerHTML = "";
-            addFormInputs("log in");
-        }
+    switch (key) {
+        case "log in":
+            BUTTON.textContent = "sign up";
+            BUTTONS_CONTAINER.appendChild(BUTTON);
+            BUTTON.onclick = () => {
+                form.innerHTML = "";
+                addFormInputs("sign up");
+            }
+            break;
+        default:
+            BUTTON.textContent = "log in";
+            BUTTONS_CONTAINER.appendChild(BUTTON);
+            BUTTON.onclick = () => {
+                form.innerHTML = "";
+                addFormInputs("log in");
+            }
     }
     //add buttons to form
-    form.appendChild(buttonsContainer);
+    form.appendChild(BUTTONS_CONTAINER);
 }
 
-
-
-//! delete ///////////////
-//////////////////////////////////////////////////////////////////////////////////////
 function setEyeEvent() {
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');

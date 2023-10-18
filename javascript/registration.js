@@ -13,29 +13,32 @@ const formBox = document.getElementById("formBox");
 const form = document.getElementsByTagName("form")[0];
 const submit = document.getElementById("submit");
 
+
+
 //! try to figure out why the event is deprecated(marked),(maybe there is something missing?)
-function handleSubmittedForm(){
+function handleSubmittedForm() {
     event.preventDefault();
     const title = document.getElementById("title");
 
 
-    if (title.textContent ==="sign up"){
+    if (title.textContent === "sign up") {
         return handleSubmittedFormSignup() || true;
     }
-    else{ const inputTags = document.getElementsByTagName("input");
-    //! try to change it to const (and declare them in different scope)
-    let password;
-    let username;
-    for (let tag of inputTags){
-        if(tag.id==="password"){
-            password=tag.value
+    else {
+        const inputTags = document.getElementsByTagName("input");
+        //! try to change it to const (and declare them in different scope)
+        let password;
+        let username;
+        for (let tag of inputTags) {
+            if (tag.id === "password") {
+                password = tag.value
+            }
+            if (tag.id === "username") {
+                username = tag.value
+            }
         }
-        if(tag.id==="username"){
-           username=tag.value
-        }
-    }
-        return logIn(password,username);
-        
+        return logIn(password, username);
+
     }
 }
 
@@ -44,68 +47,35 @@ function handleSubmittedFormSignup() {
     let failed = false;
     //!maybe you should try switch and case?
     for (let tag of inputTags) {
+        if (tag.name !== "submit" && tag.name !== "button") {
 
-        //! to make it easier type ctrl+f to search for console.log and delete what you dont need
-        //! delete console.logs when finished
-        console.log('tag: ', tag);
-        console.log('tag.name: ', tag.name);
+            if ((tag.name === "first name" || tag.name === "last name") && !checkName(tag.value)) {
+                alert(`invalid ${tag.id}!! a name should be english characters only.`);
+                tag.style.borderColor = "red";
+                return false;
+            }
 
-        //! why is there continue maybe it's better to have a not condition and return?
-        if (tag.name === "submit" || tag.name === "button") {
-            //! delete console.logs when finished
-            console.log("button");
-            continue;
-        }
-        //! delete console.logs when finished
-        console.log('!checkName(tag.value): ', !checkName(tag.value));
-        if ((tag.name === "first name" || tag.name === "last name") && !checkName(tag.value)) {
-            alert(`invalid ${tag.id}!! a name should be english characters only.`);
-            tag.style.borderColor = "red";
-            let failed = true;//! I think you can delete this, it seems like it's not used?
-            return false;
-            break;//! I think you can delete this
-        }
-        //! delete console.logs when finished
-        console.log('!checkEmail(tag.value): ', !checkEmail(tag.value));
+            if (tag.name === "Email" && !checkEmail(tag.value)) {
+                alert(`invalid ${tag.id}!! an email should be in this form: lettesAndNumbers@domain`);
+                tag.style.borderColor = "red";
+                return false;
+            }
+            if (tag.name === "username" && !checkUsername(tag.value)) {
+                alert(`invalid ${tag.id}!! a username should be .`);
+                tag.style.borderColor = "red";
+                return false;
+            }
+            if (tag.name === "password" && !checkPassword(tag.value)) {
+                alert(`invalid ${tag.id}!! a password should be at least 8 characters long, and contain at least 1 upeercase and lowercase letters and a number.`);
+                tag.style.borderColor = "red";
+                return false;
 
-        if (tag.name === "Email" && !checkEmail(tag.value)) {
-            alert(`invalid ${tag.id}!! an email should be in this form: lettesAndNumbers@domain`);
-            tag.style.borderColor = "red";
-            let failed = true;//! I think you can delete this, it seems like it's not used?
-            return false;
-
-            break;//! I think you can delete this
+            }
         }
-        //! delete console.logs when finished
-        console.log('!checkUsername(tag.value): ', !checkUsername(tag.value));
-        if (tag.name === "username" && !checkUsername(tag.value)) {
-            alert(`invalid ${tag.id}!! a username should be .`);
-            tag.style.borderColor = "red";
-            let failed = true;//! delete?
-            return false;
-
-            break;//! delete?
-        }
-        if (tag.name === "password" && !checkPassword(tag.value)) {
-            alert(`invalid ${tag.id}!! a password should be at least 8 characters long, and contain at least 1 upeercase and lowercase letters and a number.`);
-            tag.style.borderColor = "red";
-            let failed = true;// !delete?
-            return false;
-
-            break;//! delete
-        }
-        //!who is this for? if its for user then use alert? 
-        if (failed) {
-            console.log("failed!!")
-        }
-        console.log('failed: ', failed);
     }
-
-
-    //dcheck if already exists in local storage!
+    //check if already exists in local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
     let usedKeys = 0;
-
 
     //add new user to local storage
     if (!failed) {
@@ -124,17 +94,13 @@ function handleSubmittedFormSignup() {
                     failed = true;
                     alert("user already exists! log in to start playing");
                     return false;
-
-                    
                 }
                 failed = true;
                 alert("username is alredy used. try again with a different one");
                 return false;
-                
             }
             else {
                 if (user["email"] === newUser["email"]) {
-
                     failed = true;
                     alert("Email is alredy used. try again with a different one or log in with this Email's account username and password.")
                     break;
@@ -144,7 +110,7 @@ function handleSubmittedFormSignup() {
         }
 
 
-        if(!failed){
+        if (!failed) {
 
             users.push(newUser);
             localStorage.setItem("users", JSON.stringify(users));

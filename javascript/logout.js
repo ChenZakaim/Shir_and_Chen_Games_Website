@@ -20,7 +20,7 @@ function logIn(password, username) {
             return true;
         }
     }
-    alert("user does not exists.");
+    alert("user does not exists.");//! maybe add or wrong details
 }
 
 function LogOut() {

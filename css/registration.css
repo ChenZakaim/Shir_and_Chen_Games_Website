@@ -14,7 +14,7 @@ h2 {
     margin-bottom: 0.5em;
 }
 
-#formbox {
+#form-box {
 
     display: flex;
     flex-direction: column;
@@ -61,8 +61,11 @@ input {
     border: 3px solid #f58b7e;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
 #buttonsContainer {
     display: flex;
     justify-content: space-between;
