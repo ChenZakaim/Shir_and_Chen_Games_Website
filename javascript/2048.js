@@ -230,7 +230,7 @@ function add2randomly(board) {
             gameOver();
         }
         else {
-            let arrNum = -1;
+            let arrNum = -1;//! delete if not used
             let index = -1;
             for (const arr of board) {
                 if (index !== -1) {
@@ -253,8 +253,6 @@ function gameOver() {
     HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
     HTML_BOARD.lastChild.id = "game-over-gif";
 
-
-    
     HTML_BOARD.appendChild(document.createElement("div"));
     HTML_BOARD.lastChild.textContent = "start again";
     HTML_BOARD.lastChild.className = "game-button reset";

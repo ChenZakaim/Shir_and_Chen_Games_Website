@@ -28,7 +28,13 @@ body {
     border-radius: 2em;
 
 }
+<<<<<<< HEAD
+image{
+    text-decoration: none;
+}
+=======
 
+>>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
 #logout:hover {
 
     border: 1px solid black;

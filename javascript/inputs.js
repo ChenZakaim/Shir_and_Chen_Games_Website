@@ -56,6 +56,7 @@ function addFormInputs(key) {
     SUBMIT.id = "submit";
     BUTTONS_CONTAINER.appendChild(SUBMIT);
 
+    //! if this is let than use lower case
     let BUTTON = document.createElement("button");
     BUTTON.type = "button";
     BUTTON.id = "button";

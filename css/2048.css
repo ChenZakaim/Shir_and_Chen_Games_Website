@@ -15,14 +15,22 @@ body {
     max-width: 42em;
     margin: 0 auto;
     padding: 5px;
+    background-color: #e95853;
+}
+nav #homebutton{
+    float: left;
+    margin: 2px;
+    padding: 10px;
+    
+}
+hr {
+    width: 500px;
 }
 
 #board {
-    margin: 1em 0;
-    grid-area: game;
-    width: 480px;
-    height: 480px;
-    background-color: rgb(255, 195, 163);
+
+    background-color: #fbb38d;
+
     border: 6px solid #f58b7e;
     margin: 0 auto;
     display: flex;
@@ -58,17 +66,26 @@ body {
     cursor: pointer;
     border: 1px solid #b66878;
 }
+#game-over-gif {
+    width:30%;
+    align-self: center;
+}
 /* tiles classes */
 .tile {
     width: 90px;
     height: 90px;
     border: 5px solid #ac6d7a;
+    width: 90px;
+    height: 90px;
+    border: 5px solid #f58b7e;
+
     font-size: 40px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .x0 {
     color: transparent;
