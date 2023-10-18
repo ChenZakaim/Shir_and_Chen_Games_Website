@@ -28,14 +28,16 @@ body {
     border-radius: 2em;
 
 }
-image{
+
+image {
     text-decoration: none;
 }
+
 #logout:hover {
 
     border: 1px solid black;
 }
- 
+
 
 #togglePassword {
     margin-top: -1.6em;
@@ -43,4 +45,7 @@ image{
     opacity: 0.5;
     align-self: flex-end;
     cursor: pointer;
+}
+a:visited{
+    color:black;
 }
