@@ -1,10 +1,8 @@
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+body{
+    margin: 0;
 }
-
 #game-container-2048 {
+    font-family: 'Space Mono', monospace;
     display: grid;
     grid-template-areas:
     "bestScore score reset"
@@ -24,9 +22,7 @@ nav #homebutton{
     padding: 10px;
     
 }
-hr {
-    width: 500px;
-}
+
 
 #board {
     width: 25em;

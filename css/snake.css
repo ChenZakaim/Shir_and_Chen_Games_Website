@@ -1,9 +1,8 @@
+html{
+    padding: 0;
+}
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #e3f2fd;
+    margin-top: 0;
 }
 
 nav {
@@ -20,7 +19,7 @@ nav {
     border-radius: 5px;
     overflow: hidden;
     justify-content: space-between;
-    margin-top: 10vh;
+    margin: 0 auto;
 }
 
 .gamedetails {
@@ -62,8 +61,9 @@ span {
     border: 2px solid #fbb38d;
     border-radius: 10px;
     position: absolute;
-    top: 19vh;
-    left: 18vw;
+    top: 23vh;
+    left: 20vw;
+    font-size: 1.5em;
 
 }
 

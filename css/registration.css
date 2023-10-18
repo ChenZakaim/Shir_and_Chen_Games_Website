@@ -1,7 +1,10 @@
 body {
-    font-size: 2rem;
+    font-size: 2em;
+    padding: 2.5em;
 }
-
+h1 {
+    font-size: 2em;
+}
 #form {
     display: flex;
     flex-direction: column;

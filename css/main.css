@@ -1,4 +1,7 @@
+
 body {
+    margin: 0;
+    padding-top: 6em;
     background-color: #f58b7e;
     font-weight: bold;
     font-family: 'Concert One', sans-serif;
@@ -7,20 +10,16 @@ body {
 }
 
 #navigation {
+    position: fixed;
+    top: 0em;
+    left: -4px;
     height: 9vh;
-    width: 100vw;
+    width: 100%;
     background-color: #fbb38d;
     display: flex;
-    justify-content: space-between; 
+    justify-content: flex-start; 
     align-items: center; 
-}
-
-#home-button img{
-    float: left;
-    margin:2px;
-    padding: 8px;
-    height: 60px;
-    width: 30x;
+    padding: 0.5em;
 }
 
 #logout {
@@ -33,11 +32,13 @@ body {
     border: 1px solid #fbb38d;
     cursor: pointer;
     border-radius: 2em;
+    justify-self: center;
 
 }
 h1{
-    text-align: center;
-    font-size: 50px;
+    width: 70%;
+    padding-left:1em ;
+    font-size: 3.5em;
     color: black;
     margin: 0px;
    
@@ -62,4 +63,10 @@ image {
 }
 a:visited{
     color:black;
+}
+
+#game-title {
+    text-align: center;
+    font-size: 2.7em;
+    font-family: 'Space Mono', monospace;
 }
