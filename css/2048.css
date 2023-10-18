@@ -9,13 +9,13 @@ body {
     grid-template-areas:
     "bestScore score reset"
     "game game game";
+    grid-gap: 5px;
     justify-content: center;
     justify-items: center;
-    background-color: #ffc2c0;
     max-width: 42em;
     margin: 0 auto;
-    padding: 5px;
-    background-color: #e95853;
+    padding: 1em;
+    background-color: #ffb7b5;
 }
 nav #homebutton{
     float: left;
@@ -28,9 +28,10 @@ hr {
 }
 
 #board {
-
+    width: 25em;
+    height: 25em;
     background-color: #fbb38d;
-
+    grid-area: game;
     border: 6px solid #f58b7e;
     margin: 0 auto;
     display: flex;

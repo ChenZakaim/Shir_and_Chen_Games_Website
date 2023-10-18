@@ -6,12 +6,14 @@ updateHtmlBoard(board);
 function reset(HTML_BOARD) {
     HTML_BOARD.innerHTML = "";
     HTML_BOARD.style.flexDirection = "row";
+    HTML_BOARD.focus();
     board = createBoard();
     updateHtmlBoard(board);
 }
 document.getElementById("reset").addEventListener("click", () => { reset(HTML_BOARD) });
-document.getElementById("board").addEventListener("click", () => { document.body.style.overflow = "Hidden"; })
+document.getElementById("board").addEventListener("click", () => { document.body.style.overflow = "Hidden"; HTML_BOARD.focus(); })
 document.getElementById("board").addEventListener("keydown", (event) => {
+    HTML_BOARD.focus();
     switch (event.key) {
         case "ArrowUp":
             // Arrow up: scan from top to bottom, left to right
@@ -169,7 +171,6 @@ function createBoard() {
         board[r][c] = 2;
 
     }
-    console.log('board: ', board);
     return board;
 }
 
@@ -179,10 +180,8 @@ function updateHtmlBoard(arrBoard) {
     let tile;
     for (let row = 0; row < arrBoard.length; row++) {
         for (let col = 0; col < arrBoard[row].length; col++) {
-            console.log('isEmpty: ', isEmpty);
             if (isEmpty) {
                 tile = document.createElement("div");
-                console.log('tile: ', tile);
                 tile.id = "" + row + col;
                 HTML_BOARD.append(tile);
             }
@@ -218,8 +217,6 @@ function addToScore(num) {
 
 }
 function add2randomly(board) {
-    console.log('BOARD: ', board);
-
     num = Math.floor(Math.random() * 4);
     num2 = Math.floor(Math.random() * 4);
     if (board[num][num2] === 0) {
@@ -256,6 +253,6 @@ function gameOver() {
     HTML_BOARD.appendChild(document.createElement("div"));
     HTML_BOARD.lastChild.textContent = "start again";
     HTML_BOARD.lastChild.className = "game-button reset";
-    HTML_BOARD.lastChild.addEventListener("click", () => {reset(HTML_BOARD);});
+    HTML_BOARD.lastChild.addEventListener("click", () => { reset(HTML_BOARD); });
 
 }
