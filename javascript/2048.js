@@ -23,7 +23,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
 
             for (let row = 0; row < board.length; row++) {
                 for (let col = 0; col < board[row].length; col++) {
-                    for (let i = row + 1; i < board.length - 1; i++) {
+                    for (let i = row + 1; i < board.length; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextR = row + 1;
@@ -89,7 +89,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
             // in this case, the next tile is at BOARD[row][col+1]
             for (let row = 0; row < board.length; row++) {
                 for (let col = 0; col < board[row].length; col++) {
-                    for (let i = col + 1; i < board[row].length - 1; i++) {
+                    for (let i = col + 1; i < board[row].length; i++) {
 
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
 
@@ -124,7 +124,7 @@ document.getElementById("board").addEventListener("keydown", (event) => {
 
             for (let row = 0; row < board.length; row++) {
                 for (let col = board[row].length - 1; col >= 0; col--) {
-                    for (let i = col - 1; i >= 1; i--) {
+                    for (let i = col - 1; i >= 0; i--) {
                         //eliminate all next 0s if the next one is 0 - brings the next number close if exists
                         let nextC = col - 1;
                         while (nextC < board.length && nextC > 0 && board[row][nextC] === 0) {
