@@ -99,6 +99,8 @@ const gameletOver=()=> {
     playBoard.innerHTML = "";
     // playBoard.style.flexDirection = "column";
     playBoard.appendChild(document.createElement("h2"));
+    playBoard.style.flexDirection = "column";
+    playBoard.firstChild.id="overtext"
     playBoard.firstChild.textContent = "Game over:(";
     playBoard.appendChild(document.createElement("img"));
     playBoard.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";

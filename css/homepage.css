@@ -1,8 +1,8 @@
-
 #Games {
     text-align: center;
     font-size: 50px;
 }
+
 #grid-container {
     display: grid;
     grid-template-columns: 40vh 40vh 40vh;
@@ -12,6 +12,7 @@
     grid-gap: 5vw;
 
 }
+
 .images {
     margin: 4vh 1.7vw;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 312px;
@@ -28,6 +29,7 @@
     border-radius: 10px;
     z-index: 1;
 }
+
 .img:hover {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 312px;
     color: black;
@@ -41,15 +43,108 @@
     background-color: black;
     margin: 2vh;
 }
+
 .text {
     background-image: url(../images/Chessgame.webp);
 }
+
 footer {
     background-color: #d94258;
     height: 8vh;
     width: 97vw;
     padding: 10px;
 }
-a:link{
-    color:black
+
+a:link {
+    color: black
+}
+
+@media screen and (max-width: 600px) {
+
+    #grid-container {
+        grid-template-columns: 40vh;
+        grid-template-rows: 80vw;
+        justify-content: space-around;
+    }
+
+    div .image {
+        margin-bottom: 50px;
+    }
+
+    .image img {
+        width: 70vw;
+        height: 40vh;
+    }
+
+    #house {
+        height: 50px;
+        width: 25x;
+    }
+
+    #logout {
+        width: 40vw;
+        font-size: 20px;
+        margin: 12px;
+    }
+}
+
+@media screen and (max-width:990px) and (min-width: 600px) {
+    #grid-container {
+        grid-template-columns: 30vh 30vh;
+        grid-template-rows: 80vw 80vw;
+        padding-bottom: 40px;
+
+    }
+
+    .image img {
+
+        width: 40vw;
+        height: 40vh;
+
+    }
+
+    #house {
+
+        height: 70px;
+        width: 25x;
+    }
+
+    #logout {
+
+        width: 40vw;
+        font-size: 20px;
+        margin: 12px;
+
+
+    }
+}
+
+@media screen and (max-width:1300px) and (min-width: 990px) {
+    #grid-container {
+        grid-template-columns: 40vh 40vh 40vh;
+        grid-template-rows: 50vw 50vw 50vw;
+
+    }
+
+    .image img {
+
+        width: 30vw;
+        height: 40vh;
+
+    }
+
+    #house {
+
+        height: 50px;
+        width: 25x;
+    }
+
+    #logout {
+
+        width: 40vw;
+        font-size: 20px;
+        margin: 12px;
+
+
+    }
 }

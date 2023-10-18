@@ -64,6 +64,11 @@ span {
 
 }
 #gamegif {
-    width:30%;
+    width:50%;
     align-self: center;
+}
+#overtext{
+ display: flex;
+ justify-content: center;
+ justify-items: center;
 }
