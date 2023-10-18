@@ -69,6 +69,7 @@ function handleSubmittedFormSignup() {
     //add new user to local storage
     if (!failed) {
         let newUser = {};
+
         for (let tag of inputTags) {
             if (tag.id === "submit" || tag.id === "button") {
                 continue;
@@ -100,8 +101,8 @@ function handleSubmittedFormSignup() {
 
 
         if (!failed) {
-
             users.push(newUser);
+            newUser.snakeHighScore = 0;
             newUser.userNum = users.indexOf(newUser);
             localStorage.setItem("users", JSON.stringify(users));
             localStorage.setItem("currentUser", JSON.stringify(newUser));

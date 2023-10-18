@@ -1,6 +1,6 @@
 const HTML_BOARD = document.getElementById("board");
 const USERS = JSON.parse(localStorage.getItem("users"))
-currentUser = JSON.parse(localStorage.getItem("currentUser"));
+CURRENT_USER = JSON.parse(localStorage.getItem("currentUser"));
 let hitRecord = false;
 
 let board = createBoard();
@@ -158,9 +158,9 @@ document.getElementById("board").addEventListener("keydown", (event) => {
 });
 
 function createBoard() {
-    currentUser.scoreLastGame2048 = 0;
+    CURRENT_USER.scoreLastGame2048 = 0;
     HTML_BOARD.innerHTML = "";
-    localStorage.setItem("currentUser", currentUser);
+    localStorage.setItem("currentUser", CURRENT_USER);
     addToScore(0);
     const board =
         [[0, 0, 0, 0],
@@ -202,20 +202,20 @@ function addToScore(num) {
     const HTML_SCORE_DIV = document.getElementById("score");
     const HTML_BEST_SCORE_DIV = document.getElementById("best-score");
     
-    let score = currentUser.scoreLastGame2048 || 0;
-    let bestScore = currentUser.bestScoreGame2048 || 0;
+    let score = CURRENT_USER.scoreLastGame2048 || 0;
+    let bestScore = CURRENT_USER.bestScoreGame2048 || 0;
     
     score += num;
-    currentUser.scoreLastGame2048 = score;
+    CURRENT_USER.scoreLastGame2048 = score;
     
     if (!isNaN(bestScore) && !isNaN(score) && score > bestScore) {
-        currentUser.bestScoreGame2048 = score;
+        CURRENT_USER.bestScoreGame2048 = score;
         bestScore = score;
         hitRecord = true;
     }
     if (!isNaN(score)) {
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
-        USERS[currentUser.userNum] = currentUser;
+        localStorage.setItem("currentUser", JSON.stringify(CURRENT_USER));
+        USERS[CURRENT_USER.userNum] = CURRENT_USER;
         localStorage.setItem("users", JSON.stringify(USERS));
     }
     
