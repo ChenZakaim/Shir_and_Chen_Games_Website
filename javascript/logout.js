@@ -1,14 +1,14 @@
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-const logoutButton = document.getElementById("logout");
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const LOGOUT_BUTTON = document.getElementById("logout");
 
 if (currentUser["username"] === "guest") {
-    logoutButton.textContent = "log in / sign up";
-    logoutButton.addEventListener("click", () => {
+    LOGOUT_BUTTON.textContent = "log in / sign up";
+    LOGOUT_BUTTON.addEventListener("click", () => {
     window.location.assign("../html/index.html");
     });
 }
 else {
-    logoutButton.addEventListener("click", LogOut);
+    LOGOUT_BUTTON.addEventListener("click", LogOut);
 }
 
 function logIn(password, username) {
