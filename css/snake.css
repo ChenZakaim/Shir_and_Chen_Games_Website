@@ -5,7 +5,6 @@ body {
     min-height: 100vh;
     background-color: #e3f2fd;
 }
-<<<<<<< HEAD
 nav{
     position: absolute;
     top:10px;
@@ -14,76 +13,53 @@ nav{
     width: 85vmin;
     height: 75vmin;
     background-color: #fbb38d;
-=======
-
-.wrapper {
-    width: 65vmin;
-    height: 70vmin;
-    background-color: #293447;
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     overflow: hidden;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-top:10vh;
 }
 
 .gamedetails {
-<<<<<<< HEAD
     color: #fbb38d;
-=======
-    color: #b8c6dc;
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
     font-size: 1.2rem;
     font-weight: 500;
     padding: 20px 27px;
     display: flex;
     justify-content: space-between;
+
 }
 
 span {
-<<<<<<< HEAD
     color: #e95853;
-=======
-    color: #b8c6dc;
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
 }
 
 .playboard {
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     background-color: #e95853;
-=======
-    background-color: #212837;
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
     display: grid;
     grid-template: repeat(30, 1fr)/ repeat(30, 1fr);
 
 }
 
 .playboard .food {
-<<<<<<< HEAD
     background-color: #fbb38d;
-=======
-    background-color: #ff003d;
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
 
 }
 
 .playboard .head {
-<<<<<<< HEAD
     background-color: #f58b7e;
-=======
-    background-color: blue;
 }
+#reset{
+    height:50px;
+    width:100px;
+    background-color: #e95853;
+    border:2px solid #fbb38d;
+    border-radius: 10px;
+    position: absolute;
+    top: 19vh;
+    left:18vw;
 
-#snakeboard {
-    position: relative;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
->>>>>>> 46f6a277ffa58f31fd59541d3760ffeb215b1ede
 }

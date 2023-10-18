@@ -89,3 +89,8 @@ const initGame = () => {
 changeFoodPosition();
 setIntervalid=setInterval(initGame,125);
 document.addEventListener("keydown", changeDirection);
+function reset(){
+    clearInterval(setIntervalid);
+    location.reload();
+    changeFoodPosition()
+}
