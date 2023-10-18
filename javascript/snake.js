@@ -15,9 +15,9 @@ JSON.parse(localStorage.getItem("highScore"));
 const handleGameOver = ()=>{
     //clearing the timer and reloading the page when game over :)
     clearInterval(setIntervalid);
-    alert ("Game is Over! press OK again to replay!");
-   location.reload();
-   gameOver();
+    gameletOver();
+   
+  
 }
 
 //a function to change the position of the food :)
@@ -95,18 +95,18 @@ function reset(){
     location.reload();
     changeFoodPosition();
 }
-const gameOver=()=>= {
+const gameletOver=()=> {
     playBoard.innerHTML = "";
-    playBoard.style.flexDirection = "column";
+    // playBoard.style.flexDirection = "column";
     playBoard.appendChild(document.createElement("h2"));
     playBoard.firstChild.textContent = "Game over:(";
     playBoard.appendChild(document.createElement("img"));
     playBoard.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
-    playBoard.lastChild.id = "game-over-gif";
+    playBoard.lastChild.id = "gamegif";
 
     playBoard.appendChild(document.createElement("div"));
     playBoard.lastChild.textContent = "start again";
     playBoard.lastChild.className = "game-button reset";
-    playBoard.lastChild.addEventListener("click", () => { reset(playBoard); });
+    playBoard.lastChild.addEventListener("click", () => { location.reload(); });
 
 }

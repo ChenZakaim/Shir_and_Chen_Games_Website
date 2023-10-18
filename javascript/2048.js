@@ -218,7 +218,7 @@ function addToScore(num) {
         USERS[currentUser.userNum] = currentUser;
         localStorage.setItem("users", JSON.stringify(USERS));
     }
-    
+
     HTML_SCORE_DIV.textContent = "Score: \n" + score;
     HTML_BEST_SCORE_DIV.textContent = "Best Score: \n" + bestScore;
 
@@ -255,14 +255,14 @@ function gameOver() {
     HTML_BOARD.firstChild.textContent = "Game over:(";
     HTML_BOARD.appendChild(document.createElement("img"));
 
-    if(hitRecord){
+    if (hitRecord) {
         HTML_BOARD.lastChild.src = "https://media.giphy.com/media/SvctpQCJmlG9ccyZMh/giphy.gif";
         HTML_BOARD.firstChild.innerHTML += "<h2>new record!<h2/>"
     }
     else {
         HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
     }
-    
+
     HTML_BOARD.lastChild.id = "game-over-gif";
 
     HTML_BOARD.appendChild(document.createElement("div"));
