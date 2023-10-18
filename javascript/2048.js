@@ -251,9 +251,11 @@ function add2randomly(board) {
                     arrNum = i-1;
                     break;
                 }
-                index = arr.indexOf(0);
+                index = board.indexOf(0);
             }
-            board[arrNum][index] = 2;
+            if (index !== -1 && arrNum !== -1){
+                board[arrNum][index] = 2;
+            }
         }
     }
 }
