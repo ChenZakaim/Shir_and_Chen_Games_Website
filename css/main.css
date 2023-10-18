@@ -1,34 +1,50 @@
 body {
     background-color: #f58b7e;
     font-weight: bold;
+    font-family: 'Concert One', sans-serif;
     font-family: 'Space Mono', monospace;
+    font-family: 'Tilt Neon', sans-serif;
 }
 
 #navigation {
-    height: 15vh;
+    height: 12vh;
     width: 98vw;
     background-color: #fbb38d;
+    /* padding-top:10px; */
+    /* padding-bottom: 20px; */
+    /* display: flex;
+    justify-content: center; */
+    align-items: center; 
 }
 
-#home-button {
+#home-button img{
     float: left;
-    margin: 2px;
-    padding: 10px;
+    margin:2px;
+    padding: 8px;
+    height: 60px;
+    width: 30x;
 }
 
 #logout {
     float: right;
-    height: 10vh;
+    height: 8vh;
     width: 20vw;
     font-size: 30px;
-    margin: 20px;
+    margin:15px;
     background-color: #f58b7e;
     border: 1px solid #fbb38d;
     cursor: pointer;
     border-radius: 2em;
 
 }
-
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    margin-top: 40px;
+   
+    
+}
 image {
     text-decoration: none;
 }
