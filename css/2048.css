@@ -1,88 +1,140 @@
-/* ctrl+shift+i */
-/* delete these comments when done */
-/* don't leave too much empty lines.  */
-/* well done!  */
-/* good luck! */
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: #e95853;
-}hr{
-    width: 500px;
 }
-#board{
-    width:480px;
-    height:480px;
-    background-color: #fbb38d;
+
+#game-container-2048 {
+    display: grid;
+    grid-template-areas:
+    "bestScore score reset"
+    "game game game";
+    justify-content: center;
+    justify-items: center;
+    background-color: #ffc2c0;
+    max-width: 42em;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#board {
+    margin: 1em 0;
+    grid-area: game;
+    width: 480px;
+    height: 480px;
+    background-color: rgb(255, 195, 163);
     border: 6px solid #f58b7e;
     margin: 0 auto;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-evenly;
 }
-.tile{
+#board:focus-visible{
+    outline-color: transparent;
+}
+.game-button {
+    max-height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid white;
+    margin: 1em 0;
+    padding: 0.4em;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+}
+#score {
+    grid-area: score;
+}
+#best-score {
+    grid-area: bestScore;
+}
+#reset {
+    grid-area: reset;
+}
+.reset:hover {
+    color: #ff9100;
+    cursor: pointer;
+    border: 1px solid #b66878;
+}
+/* tiles classes */
+.tile {
     width: 90px;
-    height:90px;
-    border:5px solid #ac6d7a;
+    height: 90px;
+    border: 5px solid #ac6d7a;
     font-size: 40px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .x0 {
     color: transparent;
 }
-.x2{
+
+.x2 {
     background-color: #b66878;
-    color: #f68c76;
+    color: #42251f;
 }
-.x4{
+
+.x4 {
     background-color: #C98895;
-    color: #f68c76;
+    color: #42251f;
 }
-.x8{
+
+.x8 {
     background-color: #D49BA7;
-    color: #f68c76;
+    color: #42251f;
 }
-.x16{
+
+.x16 {
     background-color: #daabb5;
-    color: #f68c76;
+    color: #42251f;
 }
-.x32{
+
+.x32 {
     background-color: #efc3ca;
-    color: #f68c76;
+    color: #42251f;
 }
-.x64{
+
+.x64 {
     background-color: #ffc5cb;
-    color: #f68c76;
+    color: #42251f;
 }
-.x128{
+
+.x128 {
     background-color: #c4808a;
-    color: #f68c76;
+    color: #42251f;
 }
-.x256{
+
+.x256 {
     background-color: #C08081;
-    color: #f68c76;
+    color: #42251f;
 }
-.x512{
+
+.x512 {
     background-color: #C38683;
-    color: #f68c76;
+    color: #42251f;
 }
-.x1024{
+
+.x1024 {
     background-color: #E08582;
-    color: #f68c76;
+    color: #42251f;
 }
-.x2048{
+
+.x2048 {
     background-color: #F79391;
-    color: #f68c76;
+    color: #42251f;
 }
-.x4096{
+
+.x4096 {
     background-color: #faaba2;
-    color: #f68c76;
+    color: #42251f;
 }
-.x8192{
+
+.x8192 {
     background-color: #e3acac;
-    color: #f68c76;
+    color: #42251f;
 }

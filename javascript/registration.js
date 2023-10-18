@@ -13,13 +13,10 @@ const formBox = document.getElementById("formBox");
 const form = document.getElementsByTagName("form")[0];
 const submit = document.getElementById("submit");
 
-
-
 //! try to figure out why the event is deprecated(marked),(maybe there is something missing?)
 function handleSubmittedForm() {
     event.preventDefault();
     const title = document.getElementById("title");
-
 
     if (title.textContent === "sign up") {
         return handleSubmittedFormSignup() || true;

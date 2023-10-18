@@ -20,9 +20,14 @@
         </div>
     </nav>
     <h1>2048</h1>
-    <hr>
-    <h2>Score:<span id="score">0</span></h2>
-    <div id="board" tabindex="0"></div>
+    <div id="game-container-2048">
+        <div class="game-button" id="score">Score: 0</div>
+        <div class="game-button" id="best-score">Best Score: 0</div>
+
+        <div class="game-button reset" id="reset" >Reset</div>
+
+        <div id="board" tabindex="0"></div>
+    </div>
 </body>
 <script src="../javascript/2048.js"></script>
 <script src="../javascript/logout.js"></script>
