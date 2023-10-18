@@ -20,7 +20,7 @@ function logIn(password, username) {
             return true;
         }
     }
-    alert("user does not exists.");//! maybe add or wrong details
+    alert("your username or password are wrong. please make sure they are spelled correctly.");
 }
 
 function LogOut() {

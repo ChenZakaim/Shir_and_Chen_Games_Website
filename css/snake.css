@@ -72,3 +72,43 @@ span {
  justify-content: center;
  justify-items: center;
 }
+.reset:hover {
+    color: #ff9100;
+    cursor: pointer;
+    border: 1px solid #b66878;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+#game-over-gif {
+    width:30%;
+    align-self: center;
+}
+.game-button {
+    max-height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid white;
+    margin: 1em 0;
+    padding: 0.4em;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+    align-self: center;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+  }
+}

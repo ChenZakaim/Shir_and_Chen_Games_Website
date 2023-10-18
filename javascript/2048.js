@@ -230,22 +230,30 @@ function add2randomly(board) {
     num = Math.floor(Math.random() * 4);
     num2 = Math.floor(Math.random() * 4);
     if (board[num][num2] === 0) {
+        if (Math.floor(Math.random() * 5) === 1){
+            board[num][num2] = 4;
+        }
+        else {
         board[num][num2] = 2;
+        }
+
     }
     else {
         if (document.getElementsByClassName("x0").length === 0) {
             gameOver();
         }
         else {
-            let arrNum = -1;//! delete if not used
+            let arrNum = -1;
             let index = -1;
-            for (const arr of board) {
-                if (index !== -1) {
-                    break;
+            for (let i = 0; i < board.length; i++) {
 
+                if (index !== -1) {
+                    arrNum = i-1;
+                    break;
                 }
                 index = arr.indexOf(0);
             }
+            board[arrNum][index] = 2;
         }
     }
 }

@@ -99,16 +99,19 @@ const gameletOver=()=> {
     playBoard.innerHTML = "";
     // playBoard.style.flexDirection = "column";
     playBoard.appendChild(document.createElement("h2"));
+    playBoard.style.display = "flex";
     playBoard.style.flexDirection = "column";
     playBoard.firstChild.id="overtext"
     playBoard.firstChild.textContent = "Game over:(";
     playBoard.appendChild(document.createElement("img"));
-    playBoard.lastChild.src = "https://media.giphy.com/media/W2EUn7PiV08FH8poky/giphy.gif";
+    playBoard.lastChild.src = "https://media.giphy.com/media/lrnoLKqGFnth30V76a/giphy.gif";
     playBoard.lastChild.id = "gamegif";
 
     playBoard.appendChild(document.createElement("div"));
     playBoard.lastChild.textContent = "start again";
     playBoard.lastChild.className = "game-button reset";
-    playBoard.lastChild.addEventListener("click", () => { location.reload(); });
+    playBoard.lastChild.addEventListener("click", () => { 
+        playBoard.style.display = "grid";
+        location.reload(); });
 
 }
