@@ -201,10 +201,10 @@ function updateHtmlBoard(arrBoard) {
 function addToScore(num) {
     const HTML_SCORE_DIV = document.getElementById("score");
     const HTML_BEST_SCORE_DIV = document.getElementById("best-score");
-
+    
     let score = currentUser.scoreLastGame2048 || 0;
     let bestScore = currentUser.bestScoreGame2048 || 0;
-
+    
     score += num;
     currentUser.scoreLastGame2048 = score;
     
@@ -218,9 +218,12 @@ function addToScore(num) {
         USERS[currentUser.userNum] = currentUser;
         localStorage.setItem("users", JSON.stringify(USERS));
     }
-
+    
     HTML_SCORE_DIV.textContent = "Score: \n" + score;
     HTML_BEST_SCORE_DIV.textContent = "Best Score: \n" + bestScore;
+    if (num === 2048){
+        win();
+    }
 
 }
 function add2randomly(board) {
@@ -267,6 +270,23 @@ function gameOver() {
 
     HTML_BOARD.appendChild(document.createElement("div"));
     HTML_BOARD.lastChild.textContent = "start again";
+    HTML_BOARD.lastChild.className = "game-button reset";
+    HTML_BOARD.lastChild.addEventListener("click", () => { reset(HTML_BOARD); });
+
+}
+
+function win() {
+    HTML_BOARD.innerHTML = "";
+    HTML_BOARD.style.flexDirection = "column";
+    HTML_BOARD.appendChild(document.createElement("h2"));
+    HTML_BOARD.firstChild.textContent = "You Won!!!";
+    HTML_BOARD.appendChild(document.createElement("img"));
+    HTML_BOARD.lastChild.src = "https://media.giphy.com/media/W2nbuGaJt8PIQ1O24P/giphy.gif";
+    HTML_BOARD.lastChild.id = "game-over-gif";
+    HTML_BOARD.lastChild.style.width = "55%";
+    HTML_BOARD.lastChild.style.transform = "translateX(6%)";
+    HTML_BOARD.appendChild(document.createElement("div"));
+    HTML_BOARD.lastChild.textContent = "play again";
     HTML_BOARD.lastChild.className = "game-button reset";
     HTML_BOARD.lastChild.addEventListener("click", () => { reset(HTML_BOARD); });
 
