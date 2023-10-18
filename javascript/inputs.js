@@ -2,6 +2,7 @@
 const formInputs = {
     "log in": ["username", "password"],
     "sign up": ["first name", "last name", "email", "username", "password"]
+
 };
 
 /**
@@ -57,23 +58,23 @@ function addFormInputs(key) {
     BUTTONS_CONTAINER.appendChild(SUBMIT);
 
     //! if this is let than use lower case
-    let BUTTON = document.createElement("button");
-    BUTTON.type = "button";
-    BUTTON.id = "button";
+    let button = document.createElement("button");
+    button.type = "button";
+    button.id = "button";
     //set button value
     switch (key) {
         case "log in":
-            BUTTON.textContent = "sign up";
-            BUTTONS_CONTAINER.appendChild(BUTTON);
-            BUTTON.onclick = () => {
+            button.textContent = "sign up";
+            BUTTONS_CONTAINER.appendChild(button);
+            button.onclick = () => {
                 form.innerHTML = "";
                 addFormInputs("sign up");
             }
             break;
         default:
-            BUTTON.textContent = "log in";
-            BUTTONS_CONTAINER.appendChild(BUTTON);
-            BUTTON.onclick = () => {
+            button.textContent = "log in";
+            BUTTONS_CONTAINER.appendChild(button);
+            button.onclick = () => {
                 form.innerHTML = "";
                 addFormInputs("log in");
             }

@@ -208,7 +208,7 @@ function addToScore(num) {
     score += num;
     currentUser.scoreLastGame2048 = score;
     
-    if (!isNaN(bestScore) && !isNaN(score) && score >= bestScore) {
+    if (!isNaN(bestScore) && !isNaN(score) && score > bestScore) {
         currentUser.bestScoreGame2048 = score;
         bestScore = score;
         hitRecord = true;
