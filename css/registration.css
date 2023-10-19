@@ -2,9 +2,7 @@ body {
     font-size: 2em;
     padding: 2.5em;
 }
-h1 {
-    font-size: 2em;
-}
+
 #form {
     display: flex;
     flex-direction: column;
@@ -67,4 +65,10 @@ input {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+}
+
+@media only screen and (min-width: 991px) {
+    h1 {
+        font-size: 1.3em;
+    }
 }

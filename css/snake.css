@@ -79,7 +79,7 @@ span {
 }
 
 .reset:hover {
-    color: #ff9100;
+
     cursor: pointer;
     border: 1px solid #b66878;
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;

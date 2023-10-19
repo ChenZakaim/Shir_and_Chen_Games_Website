@@ -78,7 +78,7 @@ a:link {
         width: 70vw;
         height: 40vh;
     }
-
+/* 
     #house {
         height: 50px;
         width: 25x;
@@ -91,7 +91,7 @@ a:link {
     }
     h1{
         font-size: 30px;
-    }
+    } */
 }
 
 @media screen and (max-width:990px) and (min-width: 600px) {
@@ -110,7 +110,7 @@ a:link {
         height: 40vh;
 
     }
-
+/* 
     #house {
 
         height: 70px;
@@ -127,7 +127,7 @@ a:link {
     }
     h1{
         font-size: 40px;
-    }
+    } */
     div .image{
         margin:10vh;
     }
@@ -147,7 +147,7 @@ a:link {
         height: 40vh;
 
     }
-
+/* 
     #house {
 
         height: 65px;
@@ -160,5 +160,5 @@ a:link {
         margin: 12px;
 
 
-    }
+    } */
 }
