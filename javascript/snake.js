@@ -123,6 +123,8 @@ const gameletOver = () => {
     playBoard.lastChild.addEventListener("click", () => {
         playBoard.style.display = "grid";
         location.reload();
+        playBoard.innerHTML = "";
+
     });
 
 }

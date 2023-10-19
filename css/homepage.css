@@ -85,8 +85,8 @@ a:link {
     }
 
     #logout {
-        max-width: 10vw;
-        font-size: 20px;
+        max-width: 50vw;
+        font-size: 15px;
         margin: 12px;
     }
     h1{
@@ -99,6 +99,8 @@ a:link {
         grid-template-columns: 30vh 30vh;
         grid-template-rows: 80vw 80vw;
         padding-bottom: 40px;
+        grid-row-gap: em;
+        grid-column-gap: 3em;
 
     }
 
@@ -117,14 +119,17 @@ a:link {
 
     #logout {
 
-        max-width: 10vw;
+        max-width: 60vw;
         font-size: 20px;
         margin: 12px;
 
 
     }
     h1{
-        font-size: 30px;
+        font-size: 40px;
+    }
+    div .image{
+        margin:10vh;
     }
 }
 
@@ -132,6 +137,7 @@ a:link {
     #grid-container {
         grid-template-columns: 40vh 40vh 40vh;
         grid-template-rows: 50vw 50vw 50vw;
+        grid-column-gap: 7em;
 
     }
 
@@ -146,5 +152,13 @@ a:link {
 
         height: 65px;
         width: 25x;
+    }
+    #logout {
+
+        max-width: 60vw;
+        font-size: 25px;
+        margin: 12px;
+
+
     }
 }
